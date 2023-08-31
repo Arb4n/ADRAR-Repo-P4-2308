@@ -1,0 +1,12 @@
+'react-scripts' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.  
+ 
+ - check if node_modules folder is here
+ - check if package Json is here
+ 
+ - in cmd: 
+	run >> npm update
+  
+  
+ - Maybe if soesn't work 
+	run>> npm audit fix --force

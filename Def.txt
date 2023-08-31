@@ -1,11 +1,84 @@
+REACT>> 
+Un framework JS est un ensemble de classes, fonctions et utilitaires qui nous facilitent la création d’applications pour les navigateurs ou mobiles.
+
+L’un des outils les plus populaires, React, qui est une bibliothèque aussi bien qu’un framework, permet de créer des interfaces utilisateurs. 
+
+L’approche technique de React est de créer du code modulaire, à base de composants réutilisables.
+
+Trois des avantages de React sont sa communauté, sa documentation et ses opportunités professionnelles.
+
+JSX>>
+JSX.
+
+Il s’agit de l'extension JavaScript créée par React, qui permet 
+d’utiliser notre syntaxe sous forme de tags directement dans le code JavaScript.
+
+
+
 Variable : un nom auquel on peut y stocker une valeur. 
 on peut lire la valeur de la variable
 on peut la modifier
 on peut la comparer
 
-Il faut qu'elle existe : on v la créer
+Il faut qu'elle existe : on va la créer
 Ensuite, on va l'affecter affectation
 On peut la lire, juste en mettant son nom. 
+
+
+
+CRA>>
+    Les développeurs utilisent des outils automatisés pour faciliter leur expérience de développement.
+	    
+	gérer les différentes dépendances (bibliothèques) utilisées par notre app ;
+
+    optimiser le chargement de notre code dans les navigateurs ;
+
+    importer du CSS et des images ;
+
+    gérer les différentes versions de JavaScript ;
+
+    faciliter l'expérience de développement, en rechargeant la page lorsque le code est modifié.
+
+    Create React App (CRA) est la boîte à outils créée par Facebook, qui reste encore la référence pour initier un projet React.
+
+    Un projet initialisé avec CRA possède toujours : 
+
+        un fichier index.html   qui est le template où vivra notre app React ;
+
+        un package.json   qui liste les dépendances et les scripts ;
+
+        un fichier index.js   dans lequel notre app React est initialisée, et greffée au HTML.
+
+    CRA s'exécute avec l’aide d’un gestionnaire de paquet (dans ce cours, yarn).
+
+    Webpack permet d'importer simplement les fichiers entre eux.
+
+
+
+
+WEBPACK>> 
+
+c’est Webpack qui nous permet d’importer notre composant aussi facilement, 
+avec import. Cet outil particulièrement utile est essentiel pour lier les 
+fichiers entre eux, afin qu’ils soient interprétés par le navigateur. 
+Et dire que Create React App nous a permis de l’installer sans faire
+ aucune configuration. Si ça c’est pas de la chance ! 🍀
+
+
+
+
+Quelle est la différence entre une image bitmap et une image vectorielle ?
+Quel est la différence entre une image matricielle ou ...
+La principale différence entre ces deux formats est qu'une image vectorielle 
+peut être agrandie sans perdre sa qualité alors qu'une image matricielle perd en 
+netteté à l'agrandissement. L'image matricielle (ou bitmap): Elle est composée de
+ petits points appelés « pixels » que l'on ne voit pas à l'œil nu.2
+
+
+
+
+CDN
+
 
 
 
@@ -85,7 +158,7 @@ d<<
 ex>> si on a cette boîte noire
 qui s'appelle pikachu, on a nos 
 parenthèses pour démarrer 
-la fonctin, puis on a les deux args
+la fonction, puis on a les deux args
 /valeurs / entrées sde la fonction
 dans les parenthèses. 
 Les deux valeurs 4,10 sont 

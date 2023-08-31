@@ -43,3 +43,326 @@ const element = {
     children: 'Bonjour, monde !'
   }
 };
+
+
+
+
+
+
+
+Un premier composant : 
+ma fonction MyComponent 
+
+
+function MyComponent () {
+	return (<div>Hello OpenClassrooms</div>)
+	}
+	
+	
+En fléchée : 	
+const MyComponent = () => (<div> Hello </div>)
+)
+
+
+
+
+html>>
+<div id="root"></div>
+
+JS>>
+function Header() {
+  return (<h1>La maison jungle</h1>)
+}
+
+ReactDOM.render(<Header />, document.getElementById("root"))
+
+OR>> 
+
+const Header = () => <h1> Jungle </h1>;
+
+ReactDOM.render(<Header />, document.getElementById("header"));
+
+
+
+const Header = () => <H1> Jungle </h1>
+const Header = () => (<h1> Jungle </h1> 
+
+
+const Header = () () => (</1> h1 jungle </h1>
+
+
+ReactDOM.render (<Header />, document.getElementById ("header"));
+
+
+const Header = () => (<h1> Jungle </h1> )
+
+ReactDOM.render (getElementById ("header")
+
+ReactDom.render (getElementById ("header") 
+
+
+cosnt Header =() => (<h1> jungle </h1>);
+
+
+function Header () {
+
+	return (<h1> Jungle </h1>)}
+	
+	ReactDom.render (getElementById ("header"); 
+	
+	
+	
+	
+	const Reponse = () => return (<div> La réponse à la vie est {6*8});
+	
+	function Reponse () {
+	return (<div> La réponse à la vie est {6*8}</div>) 
+	}
+	
+	function Age () {
+	
+		return (<div> Alexia.toUpperCase() </div>)
+		
+		}
+		
+	<div> {2>0 ? 'Deux est plus grand que zéro' : ' Rien' } </div>
+
+		const Operation = () => (<div> 5>n ? ' liiiitle' : 'Biiiiiig !!!' </div> );
+		
+		<div> {
+		
+		
+		{} }{{}{}{}{}{}{}{{}{}{}}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{
+		const If = () => (<div> 2*3 ? 'Six' : 'Not six' </div> ) 
+		
+		
+		
+		function Description() {
+    const text = "Ici achetez toutes les plantes dont vous avez toujours rêvé"
+    return (<p>{ text }</p>)
+}
+
+
+function Description() { 
+	myText = "Lololol";
+	return (<p> {myText}</p> ;
+	
+	
+	
+	function myDescription () {
+	const text ='essai 2 connard '; 
+	return (<p> {text}</p>);
+	
+
+
+>> 
+
+
+Vous trouverez ici le lien CodePen pour commencer l'exercice. Voilà ce qui est attendu de vous :
+
+    Réutiliser le composant Banner de ce chapitre qui présente le nom de notre boutique. Vous devez sortir le titre dans une variable JavaScript : le titre doit initialement être en minuscules et être transformé en majuscules avec du JavaScript.
+
+    Créer un composant <Cart /> (panier) qui viendra sous notre titre.
+
+    Le panier contient 3 plantes : un monstera, un lierre et un bouquet de fleurs.
+
+    Créer 3 variables pour les prix des plantes : le monstera coûte 8, le lierre coûte 10, et le bouquet de fleurs coûte 15.
+
+    Le panier contient une liste (<ul> 😉), et chaque élément présente le nom de l'article, et le prix.
+
+    Le total du panier additionne les trois prix.
+
+Et la solution correspondante se trouve ici.	
+	
+	
+	
+	function Banner() {
+const title = "La maison jungle"
+  return (<h1>{title.toUpperCase()}</h1>)
+}
+
+function Cart() {
+const monsteraPrice = 8
+const ivyPrice = 10
+const flowerPrice = 15
+return (<div>
+    <h2>Panier</h2>
+    <ul>
+    <li>Monstera : {monsteraPrice}€</li>
+     <li>Lierre : {ivyPrice}€</li>
+     <li>Fleurs : {flowerPrice}€</li>
+    </ul>
+      Total : {monsteraPrice + ivyPrice + flowerPrice }€
+      </div>)
+}
+
+ReactDOM.render(<div><Banner /><Cart /></div>, document.getElementById('root'))
+
+
+
+function Banner 
+
+
+
+const MyComponent = () => (<div>Hello World</div>)
+
+function MyComponent() { return (<div>Hello World</div>)}
+
+class MyComponent extends React.Component {render() {return <div>Hello World</div>}}
+
+class MyComponent extends react.Component {render() {return <div>Hello >World</div>}}
+
+class MyComponent extends react.Component {
+
+render() 
+
+
+
+
+
+const MyComponent = () => (<h1>Hello</h1>)
+
+
+
+
+const numbers = [1, 3, 6, 0]
+const double = numbers.map(n => n*2)
+
+const numbers = [1, 8, 10, 3]
+const double = numbers.map(n => n*3)
+
+const quadruple = numbers.map(n=> n*4)
+
+
+
+>>>>>>>>
+
+
+function ShoppingList() {
+return ( 
+<ul> 
+{plantList.map((plant) => (
+	<li>{plant}</li>
+	))}
+	</ul>
+	)
+}
+
+
+
+function shoppingList() {
+return ( <ul>
+{plantList.mapr((plant)=> (<li>{plant}</li>
+))}
+</ul>
+)
+}
+function ShoppingList () {
+return ( 
+<ul> 
+{plantList.map((plant)
+</ul>
+
+
+
+function ShoppingList () {
+
+return (<ul> 
+{plantList.map((plant)=> (<li>{plant}</li>
+))}
+</ul>
+)
+}
+
+function shoppintList() {
+
+	return ( <ul>
+	{ plantList.map((plant) => (<li>{plant}</li>))
+	}</ul>
+}
+
+function ShoppingList () {
+	return (plantList.map((plant) => (<li>{plant}</li>))}
+	
+	function ShoppintList (){ return (plantList.map((plant) => (<li> {plant}<:li>))
+	
+	
+OR>>
+	
+const ShoppingList = () => (plantList.map((plant) => (<li>{plant}</li>))
+
+OR
+
+import React from 'react';
+
+const plantList = ['Monstera', 'Snake Plant', 'Fiddle Leaf Fig'];
+
+function renderPlantListItem(plant) {
+  return <li key={plant}>{plant}</li>;
+}
+
+function ShoppingList() {
+  return (
+    <ul>
+      {plantList.map(renderPlantListItem)}
+    </ul>
+  );
+}
+
+export default ShoppingList;
+
+
+
+<<<<<<<<<<<<
+
+
+
+
+consr categories = plantList.reduce(
+  const categories = plantList.reduce(
+    (acc; plant)=> 
+      acc.includes(plant.category) ? acc : acc.concat(plant.category),[]
+  )
+)
+
+const categories = pklantList.reduce(
+  const categories = plantList.reduce(
+    (acc, plant) => acc.includes(plant.category) ? acc : acc.concat(plant.category), [])
+
+    const categories = plantList.reduce(
+      (acc, plant) => acc.includes(plant.category) ? acc : acc.concat(plant.category),
+      []
+    )
+  )
+)
+const categories = plantList.reduce (
+  (acc, plant) => 
+  acc.includes(plant.category) ? acc : acc.concat(plant.category),
+  []
+)
+
+const categories = plantList.reduce (
+  (acc, plant) => acc.includes(plant.category) ? acc : acc.concat(plant.category),
+  []
+)
+
+
+const categories = plantList.reduce (
+  (acc, plant) => 
+)
+
+
+<div> 
+
+<ul>
+{categories.map(cat)=> (
+  <li> key={cat}>{cat}</li>
+)
+)}
+
+</ul>
+
+<ul> className='plantName'>
+{plantList.map((plant) =>)}
+
+</div>

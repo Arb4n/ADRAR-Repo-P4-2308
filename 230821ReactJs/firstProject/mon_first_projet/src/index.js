@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'C:/Users/Hal/Downloads/MontpellierAdrarP32308/230821ReactJs/firstProject/mon_first_projet/src/index.js';
+// import 'C:/Users/Hal/Downloads/MontpellierAdrarP32308/230821ReactJs/firstProject/mon_first_projet/src/index.js';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 

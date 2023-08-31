@@ -1,0 +1,52 @@
+https://openclassrooms.com/fr/courses/7008001-debutez-avec-react/7135593-gagnez-en-temps-et-en-efficacite-grace-aux-listes-et-aux-conditions
+
+
+1>>
+Sur la branche P2C3-Begin-1 , vous trouverez la base de code nécessaire pour commencer l'exercice. Vous verrez dans  ShoppingList.js   une liste de plantes importée depuis  /datas   qui s'appelle  plantList, et qui comporte des catégories pour chacune des plantes.
+
+À partir de cette liste de plantes, vous devrez :
+
+    Constituer une nouvelle liste de manière dynamique qui extrait les catégories uniques de plantes (que nous utiliserons également plus tard). 
+
+    Il existe plusieurs solutions pour créer une liste d'éléments uniques, mais je vous conseille de vous pencher sur la méthode reduce()  ou bienforEach().
+
+    Afficher la liste des catégories de plantes au-dessus de la liste des plantes à vendre.
+
+Attention à votre  key   !
+
+Dans la même logique, la solution se trouve sur la branche P2C3-Solution-1. 
+
+
+
+
+
+2>> 
+
+Dans notre liste de plantes  plantList.js, je vais rajouter une catégorie  isBestSale   correspondant à un  booléen   qui nous indique si notre plante fait partie des meilleures ventes. Ce qui nous donne pour le premier élément :
+{
+    name: 'monstera',
+    category: 'classique',
+    id: '1ed',
+    isBestSale: true
+},
+
+
+
+
+
+3>>
+
+Maintenant que nous avons notre booléen, nous allons utiliser un ternaire pour afficher un emoji en fonction. Dans  ShoppingList.js, au niveau de l'affichage du nom, je rajoute :
+
+{plantList.map((plant) => (
+
+    <li key={ plant.id }>
+
+        {plant.isBestSale ? <span>🔥</span> : <span>👎</span>}
+
+    </li>
+
+))}
+
+Ce qui nous donne :
+Les meilleures ventes, monstera et basilique, ont un emoji feu à côté. Les autres ont des emojis pouces vers le bas à côté.

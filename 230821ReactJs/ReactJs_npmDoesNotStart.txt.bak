@@ -1,0 +1,7 @@
+  
+ in cmd: 
+	run >> npm update
+  
+  
+ Maybe if soesn't work 
+	run>> npm audit fix --force

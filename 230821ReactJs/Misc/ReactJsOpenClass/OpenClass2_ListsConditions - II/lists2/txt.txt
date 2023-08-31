@@ -1,0 +1,337 @@
+
+
+
+
+function MyComponent () {
+     return <div> Mont composant apparaît bien</div>
+}
+ReactDOM.renderr(<MyComponent/>, document.getElementById('root'))
+
+reactDOM.render(<MyComponent</> , document.getElementById('root'))
+reactDOLM.renderr(<MyComponent</>, document.getElementById('root'))
+
+reactDOM.render(<MyComponent</>, document.getElementById('root'))
+
+
+ReactDOM.render(<MyComponent/>, document.getElementById('root'))
+
+
+reactDOM.render(<MyComponent/>, getElementById('root'))
+
+
+On appelle framework un ensemble de fonctions, classes, utiolitaires 
+qui facilitent la création de sites webs et applications
+on appelle framework front-end tout une ensemble de classes, fonctions utilitaires qui nous facilitent la création d'applciations webs
+On appelle framework front-end tout un sensemble d'utilitaires qui nous facilitent la création d'applications web et mobile.
+
+
+
+
+
+function MyComponent() {
+
+    return (<div> HEllo OpenClassrooms </>)
+
+
+}
+
+
+function MyComponent () {
+    return <div> Welcome </div> 
+
+
+
+}
+
+
+
+
+function MyComponent () {
+    return (<div> hello</div>)
+}
+
+
+function MyComponent () {
+    return ( <div> hello </div> )
+}
+
+function MyComponent () {
+    return (<div> hello </div> )
+}
+
+
+const MyComponent = () => (<div> hello</div>)
+
+
+ReactDOM.render (<MyComponent/>, document.getElementById('my-app-goes-here'))
+
+
+
+
+App.js>>
+function Header () {
+    <h1> Mon Magasin </h1>
+}
+
+ReactDOM.render (<Header/>, document.getElementById('root'))
+
+ReactDOM.render r()
+
+
+
+
+
+import logo from '../assets/logo.png'
+import '../styles/Banner.css'
+
+function Banner() {
+    const title = 'La maison jungle'
+    return (
+        <div className='lmj-banner'>
+            <img src={logo} alt='La maison jungle' className='lmj-logo' />
+            <h1 className='lmj-title'>{title}</h1>
+        </div>
+    )
+}
+
+export default Banner
+
+
+
+
+
+
+function Banner () {
+    const title = 'La maison jungle'
+    return (<div className = 'lmj-banner'>
+    <img src = {logo} alt='La Maison Jungle logo feuillee')
+}
+
+
+
+const numbers = [ 1, 2, 3, 4]
+
+const double = number.map( function (r) { r*2})
+
+
+LES KEY AUDENT REACT 0 IDENTIFIER QUELS ELEMENTS DUNE LISTE ONT 
+CHANGE ONT ETE AJOUTES ONT ETE SUPPRIMES 
+
+!!!! IL FAUT DONNER UNE CLEF A CHQUE ELEMENT DU TABELAU 
+
+
+une key aide react a identifier quels elements d'une liste 
+ont changé, ont été ajoutés, ou ont été supprimés 
+
+une key aide react à savoir quels elements d'une liste ont changé, ont été ajotués, supprimésune key 
+
+une key aide react d'identifier quels elements d'une liste ont té ajotués, ou supprimés
+elle doit etre unique$
+
+une key aide react a savboir quels elements ont 
+ete changés, ajoutés, supprimés dans une liste
+chacune doit être unique, stabl dans le temps
+
+chacune doit être unique,stable dans le temps 
+
+chacune doit $etre unuique, 
+stable dans le temps 
+
+chacune doit $etre unique, stavble dans le temps 
+
+chacune doit $être unique, stable dans le temps 
+chacune doit être unique, stable dans le temps
+
+la key permet d'associer une donnée qu compposant correspndant du DOM
+vituel 
+la key permet d'associer un une donnée au composanbt correspondant 
+dans le DOM viertuel
+une key permet d'associer une donnée au compôsant correspondant dans le DOMvirtuel
+qui permetra de générer d'autres composants 
+une keu permet d'associer une donnée au composant correpspondant dans le 
+Dom qui permettra ensite de gén"rer des composants 
+
+
+
+const number = [1, 2, 3, 4 ,5, 6 ]
+
+const double = = number.map (x => x*2)
+
+const number = [1, 2, 3, 4, 5 ]
+
+const doubles = numbers.map( x => x*2)
+
+
+
+ShoppingList.js>>
+
+const plantList = {
+    'Monstera, 
+    'Yucca, 
+   ' Lierre
+}
+
+
+const plantLIst = {
+
+    'Monstera', 
+    '"Yucca',
+    'Lierre', 
+    'Paquerette
+    
+    
+    const plantList = {
+        Monstera , 
+        'Yucca', 
+        'fleures'
+    
+}
+
+
+
+function shopppingList () {
+    return (
+        <ul> 
+        {plantList.map((plant) => (
+            <li>{plant}</li>
+        ))
+        }
+    )    
+}
+
+function shoppingList () {
+    return (
+        <ul> 
+{
+    plantList.map((plant) => (
+    <li>{plant}</li>))
+}
+
+    )
+}
+
+
+fonction shoppingList () {
+    return (
+        <ul> 
+            plantList.map((plant) => (<li> {plant}</li>)
+        </ul>)
+    )
+}
+
+
+function ShoppingList () {
+    return (
+        <ul> 
+            {
+                plantList.map((plant) => (plantList.map(<li>{plant}</li>)))
+            }
+        </ul>
+    )
+
+    }
+
+
+
+    function ShoppingList () {
+        return (
+            <ul>
+                {
+                    plantList.map((plant) => <li> {plant}</li>)
+                }
+            </ul>
+        )
+    }
+
+
+
+
+
+
+    function ShoppingList() {
+	const categories = plantList.reduce(
+		(acc, plant) =>
+			acc.includes(plant.category) ? acc : acc.concat(plant.category),
+		[]
+	)
+
+	return (
+		<div>
+			<ul>
+				{categories.map((cat) => (
+					<li key={cat}>{cat}</li>
+				))}
+			</ul>
+			<ul className='lmj-plant-list'>
+				{plantList.map((plant) => (
+					<li key={plant.id} className='lmj-plant-item'>
+						{plant.name}
+						{plant.isSpecialOffer && <div className='lmj-sales'>Soldes</div>}
+					</li>
+				))}
+			</ul>
+		</div>
+	)
+}
+
+export default ShoppingList
+
+
+
+function ShoppingList () {
+
+    const categories = plantList.reduce (
+            (acc, plant => 
+                acc.includes (plant.category) ? acc: acc.concat(plant.category),
+                    []
+                )
+
+                return (
+                        <div> 
+                            <ul> 
+                                {categories.map((cat) => ())}
+                )
+    )
+}
+
+
+
+
+
+display: flex ; 
+alignitems : center ; 
+jsutify-content : center; 
+flex-direction : column ; 
+position : relative; 
+
+display : flex ; 
+align-items : center ;
+justify-content : center; 
+flex-direction : column; 
+position : relative ; 
+
+display : flex ; 
+align-items : center; 
+justify-content : center ; 
+flex-direction : column; 
+position : relative ; 
+
+display : flex ; 
+justify-content; center ; 
+flex-direction : column; 
+position : relative; 
+
+display : flex ; 
+justify-content : center ; 
+align-items: center ; 
+flex-direction : column ; 
+
+
+<XareScale careType = 'water' scaleValue = {plant.water} />
+<Carescale careType = 'water' scaleValye = {plant.water} />
+careScale caretype = 'water' scalevalue = {plant.water} />
+
+<CareScale careType = 'light' scaleValue = {plant.light}/>
+
+
+CareScale careType = 'light' scaleValue = {plant.light}/> 

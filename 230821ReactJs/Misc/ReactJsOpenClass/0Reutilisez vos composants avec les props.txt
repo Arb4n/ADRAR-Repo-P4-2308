@@ -1,0 +1,255 @@
+Réutilisez vos composants avec les props
+Familiarisez-vous avec les props
+
+Réutilisez vos composants avec les props
+
+Vous l'avez compris : la réutilisation des composants est au cœur de la logique de React. Mais, pour être réutilisés, les composants requièrent souvent une configuration. Bonne nouvelle : pour ça, vous allez pouvoir utiliser les props. 🎉
+Familiarisez-vous avec la syntaxe
+
+Et si je vous disais que vous avez déjà utilisé une prop ? Eh oui, la prop  key   dans le chapitre sur les listes ! Vous avez donc déjà vu la syntaxe.
+
+Revenons à notre site de plantes. Nous allons maintenant créer un nouveau composant qui va être réutilisé. L'idée est de créer une échelle d'arrosage et une échelle de luminosité pour chaque plante.
+
+Rouvrons  ShoppingList.js, où nous ajoutons les données correspondantes dans  plantList  : 
+
+    une donnée  water   qui correspond à l'arrosage conseillé pour chaque plante ;
+
+    et une donnée  light   qui correspond à l'ensoleillement nécessaire.
+
+Commençons par la lumière : dans chaque item plante, on vient ajouter un composant  CareScale   et on lui passe la prop value :
+
+<CareScale scaleValue={plant.light} />
+
+Mais du coup, comment récupérer la valeur d'une prop dans notre composant ?
+
+Eh bien, les props sont récupérées dans les paramètres de la fonction qui définit notre composant.
+
+Pour  CareScale, on aura donc :
+
+function CareScale(props) {
+
+    const scaleValue = props.scaleValue
+
+    return <div>{scaleValue}☀️</div>
+
+}
+
+    
+
+export default CareScale
+
+Mais on avait dit qu'on voulait une échelle de 1 à 3, non ?
+
+On va donc partir sur une liste, qu'on peut créer manuellement.
+
+Ce qui nous donne :
+
+function CareScale(props) {
+
+    const scaleValue = props.scaleValue
+
+
+    const range = [1, 2, 3]
+
+
+    return (
+
+        <div>
+
+            {range.map((rangeElem) =>
+
+                scaleValue >= rangeElem ? <span key={rangeElem.toString()}>☀️</span> : null
+
+            )}
+
+        </div>
+
+    )
+
+}
+
+Félicitations ! 🔥 Vous venez d'utiliser les  props   !
+
+Les props sont donc des objets que l'on peut récupérer dans les paramètres de notre composant fonction.
+
+On va pousser la logique un peu plus loin afin de véritablement paramétrer notre composant.
+Créez des paramètres
+
+Je vais commencer par préciser une  prop pour le type que j'appellerai  careType  pour mon composant  CareScale   et réutiliser ce composant entre l'ensoleillement et l'arrosage :
+
+<CareScale careType='water' scaleValue={plant.water} />
+
+<CareScale careType='light' scaleValue={plant.light} />
+
+Il faut maintenant que j'adapte  CareScale   pour récupérer le  careType.
+
+À partir de maintenant, je vais utiliser une syntaxe qui nous est permise depuis l'ES6 : la déstructuration. Elle permet directement de déclarer une variable et de lui assigner la valeur d'une propriété d'un objet.
+Ici on peut donc faire :
+
+const {scaleValue, careType} = props
+
+// On évite de multiplier les déclarations qui sans cette syntaxe auraient été :
+
+// const scaleValue = props.scaleValue et
+
+// const careType = props.careType
+
+Cela nous permet de déclarer directement nos deux variables  scaleValue   et  careType  , et de les assigner aux valeurs passées en props. On peut même directement l'écrire dans les paramètres :
+
+function CareScale({scaleValue, careType}) {
+
+On peut donc maintenant paramétrer notre composant  CareScale   pour qu'il puisse gérer les données d'arrosage et les données d'ensoleillement :
+
+function CareScale({ scaleValue, careType }) {
+
+    const range = [1, 2, 3]
+
+    
+
+    const scaleType = careType === 'light' ? '☀️' : '💧'
+
+
+    return (
+
+        <div>
+
+            {range.map((rangeElem) => scaleValue >= rangeElem ? <span key={rangeElem.toString()}>{scaleType}</span> : null
+
+            )}
+
+        </div>
+
+    )
+
+}
+
+Comme vous l'avez vu ici, nous avons utilisé deux syntaxes différentes pour nos props. Pour  scaleType, nous lui avons assigné une  string, entre guillemets. En revanche, pour  scaleValue, nous lui avons attribué la valeur d'un objet, que nous avons passée entre accolades.
+
+En pratique, une prop peut avoir n’importe quelle valeur possible en JavaScript, mais syntaxiquement, en JSX, on n’a en gros que deux possibilités :
+
+    un littéral  String , matérialisé par des guillemets ;
+
+    ou, pour tout le reste (booléen, number, expression Javascript, etc.), des accolades  {}.
+
+Faites descendre les données, des parents vers les enfants
+
+Les props nous permettent donc de configurer nos composants. Elles répondent à la logique même de React selon laquelle les données descendent à travers notre arborescence de composants : il s'agit d'un flux de données unidirectionnel.
+Un composant parent fait descendre des données à ses composants enfants
+Les composants parents partagent leurs données avec leurs enfants
+
+Je vous ai déjà parlé dans la première partie de ce cours de composants parents/composants enfants ?
+
+Comme vous pouviez vous en douter, un composant est le parent du composant défini dans le  return().
+
+Dans notre exemple,  CareScale   est l'enfant, et  ShoppingList   est le parent.
+
+Pour les props, vous devez garder deux règles à l'esprit :
+
+    Une prop est toujours passée par un composant parent à son enfant : c’est le seul moyen normal de transmission.
+
+    Une prop est considérée en lecture seule dans le composant qui la reçoit.
+
+Découvrez la prop technique  children 
+
+Il existe chez React des props qui ont un comportement un peu particulier : nous les appelons les props techniques. 🛠
+
+La syntaxe de cette prop est particulière, puisqu'elle n’est pas fournie à l’aide d’un attribut, mais en imbriquant des composants à l’intérieur du composant concerné.
+
+Ce qui nous donne :
+
+<Parent>
+
+    <Enfant1 />
+
+    <Enfant2 />
+
+</Parent>
+
+Par exemple, si on utilise  children   pour réécrire la Banner, cela nous donnerait dans  App.js  :
+
+<Banner>
+
+    <img src={logo} alt='La maison jungle' />
+
+    <h1 className='lmj-title'>La maison jungle</h1>
+
+</Banner>
+
+Ici,   img  et  h1   sont les nœuds enfants dans le DOM de  Banner.
+
+Et on peut accéder à ces nœuds enfants de Banner dans ses paramètres, un peu de la même manière qu'on récupérerait des props :
+
+function Banner({ children }) {
+
+    return <div className='lmj-banner'>{children}</div>
+
+}
+
+Cette manière d'utiliser  children   est particulièrement utile lorsqu'un composant ne connaît pas ses enfants à l'avance, par exemple pour une barre de navigation (Sidebar) ou bien pour une modale.
+
+Les  props   constituent un aspect clé de React. Mais, en les manipulant, vous verrez qu'il peut être très facile de faire des erreurs. Cela vient notamment de la flexibilité de JavaScript, qui fait du typage dynamique (les types  string,  int, etc.). Pour vous donner un exemple d'erreur classique :
+
+    Vous passez une prop value à un composant. 
+
+    Vous utilisez une liste de valeurs, certaines valeurs sont des strings, d'autres des nombres. 
+
+    Vous appliquez la méthode  .toUpperCase()   à votre  value   : boum ! 
+
+Une erreur !  .toUpperCase()   n'existe pas sur un nombre. 🙈
+
+Pour éviter ce genre d'erreur, je vous conseille d'être extrêmement rigoureux sur le type de props que vous passez à vos composants.
+
+Pour cela, React a créé les PropTypes, qui nous permettent de préciser dès le début le type d'une prop, si elle est requise, et de lui attribuer une valeur par défaut. Nous ne les verrons pas dans ce cours, mais vous pouvez y jeter un œil dès maintenant.
+Exercez-vous
+
+Banner Exercez-vous
+
+Vous allez pouvoir utiliser vos connaissances pour enrichir notre site de plantes 🌱. Le code pour débuter l'exercice se trouve sur P2C4-Begin.
+
+Vous allez créer un composant PlantItem qui sera un composant enfant de ShoppingList.
+
+PlantItem prend en props :
+
+    name   pour le nom de la plante ;
+
+    cover   pour l'image correspondante ;
+
+    id   qui correspond à l'item de chaque élément ;
+
+    light ;
+
+    water.
+
+Les props  name   et  cover   seront utilisées directement dans PlantItem.
+
+light   et  water, que nous avons déjà créées ensemble, seront passées au composant  CareScale   dans  PlantItem.
+
+Vous trouverez dans  styles/PlantItem.css   les classes CSS  lmj-plant-item-cover   et  lmj-plant-item   qui vous aideront à créer de beaux composants 🤩. Je vous propose également de remplacer nos emojis par les icônes 'sun' et 'water' que vous trouverez dans  /assets.
+
+La solution se trouve sur la branche P2C4-Solution.
+En résumé
+
+    Les props sont des objets que l'on peut récupérer dans les paramètres de notre composant fonction.
+
+    Il existe deux syntaxes pour assigner une valeur à une prop :
+
+        les guillemets pour les  string ;
+
+        les accolades pour tout le reste : nombres, expressions JavaScript, booléen, etc.
+
+    La déstructuration est une syntaxe permettant de déclarer une variable en l'affectant directement à la valeur d'un objet (ou tableau).
+
+    Une prop est :
+
+        toujours passée par un composant parent à son enfant ;
+
+        considérée en lecture seule dans le composant qui la reçoit.
+
+    La prop  children   est renseignée en imbriquant les enfants dans le parent : <Parent><Enfant /></Parent>.
+
+    children   est utile lorsqu'un composant ne connaît pas ses enfants à l'avance.
+
+Alors, les props n'ont plus de secret pour vous ? 😎
+Est-ce que vous vous rendez compte qu'avec tout ce que vous avez appris, notre site de plantes prend de plus en plus forme ? 
+
+Mais vous ne trouvez pas qu'il reste encore un peu trop statique ? Qu'on ne peut pas assez interagir avec lui ? Ça tombe bien, parce que c'est le programme du prochain chapitre ! À tout de suite !

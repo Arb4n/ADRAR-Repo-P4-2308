@@ -1,0 +1,39 @@
+.lmj-plant-list {
+	list-style-type: none;
+	padding: 32px;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 800px;
+
+	background: linear-gradient(rgb(255, 255, 255), rgb(169, 192, 169), rgb(138, 230, 138), rgb(18, 171, 18))
+}
+
+.lmj-plant-item {
+	border: solid 2px black;
+	border-radius: 10px;
+	height: 150px;
+	width: 150px;
+	margin: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	background: linear-gradient(white, gold);
+}
+
+.lmj-sales {
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	font-weight: 500;
+	color: white;
+	padding: 5px 10px;
+	background-color: #31b572;
+}
+
+
+.lmj-plant-cat {
+	padding: 32px;
+	background: linear-gradient(rgb(241, 247, 241), green, rgb(240, 244, 240));
+}
