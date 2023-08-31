@@ -10,28 +10,28 @@ import cactus from '../assets/cactus.jpg'
 
 export const plantList = [
 	{
-		name: 'm',
-		category: 'classique',
+		name: 'Pass 1 jour',
+		category: 'Scène',
 		id: '1ed',
 		bestSale: true,
-		light: 2,
-		water: 3,
+		light: 1,
+		water: 0,
 		cover: monstera,
 		price: 15
 	},
 	{
-		name: 'ficus lyrata',
-		category: 'classique',
+		name: 'Pass 2 jours',
+		category: 'Scène',
 		id: '2ab',
-		light: 3,
-		water: 1,
+		light: 2,
+		water: 0,
 		cover: lyrata,
 		price: 16
 	},
 
 	{
-		name: 'pothos argenté',
-		category: 'classique',
+		name: 'Pass 3 Jours',
+		category: 'Scène',
 		id: '3sd',
 		light: 1,
 		water: 2,
@@ -39,9 +39,12 @@ export const plantList = [
 
 		price: 9
 	},
+
+
+	
 	{
-		name: 'calathea',
-		category: 'classique',
+		name: 'Pass 2 Jours + Bivouac',
+		category: 'Scène + Bivouac',
 		id: '4kk',
 		light: 2,
 		water: 3,
@@ -50,8 +53,8 @@ export const plantList = [
 		price: 20
 	},
 	{
-		name: 'olivier',
-		category: 'extérieur',
+		name: 'Pass 3 Jours + Bivouac',
+		category: 'Scène + Bivouac',
 		id: '5pl',
 		light: 3,
 		water: 1,
@@ -59,18 +62,10 @@ export const plantList = [
 		price: 25
 	},
 
+	
 	{
-		name: 'cactus',
-		category: 'plante grasse',
-		id: '8fp',
-		light: 2,
-		water: 1,
-		cover: cactus,
-		price: 6
-	},
-	{
-		name: 'basilique',
-		category: 'extérieur',
+		name: 'Pass 4 Jours + Bivouac',
+		category: 'Scène + Bivouac',
 		id: '7ie',
 		bestSale: true,
 		light: 2,
@@ -78,23 +73,26 @@ export const plantList = [
 		cover: basil,
 		price: 5
 	},
-	{
-		name: 'succulente',
-		category: 'plante grasse',
-		id: '9vn',
-		light: 2,
-		water: 1,
-		cover: succulent,
-		price: 8
-	},
+	
+	
+	
+	// {
+	// 	name: 'succulente',
+	// 	category: 'plante grasse',
+	// 	id: '9vn',
+	// 	light: 2,
+	// 	water: 1,
+	// 	cover: succulent,
+	// 	price: 8
+	// },
 
-	{
-		name: 'menthe',
-		category: 'extérieur',
-		id: '6uo',
-		light: 2,
-		water: 2,
-		cover: mint,
-		price: 4
-	}
+	// {
+	// 	name: 'menthe',
+	// 	category: 'extérieur',
+	// 	id: '6uo',
+	// 	light: 2,
+	// 	water: 2,
+	// 	cover: mint,
+	// 	price: 4
+	// }
 ]

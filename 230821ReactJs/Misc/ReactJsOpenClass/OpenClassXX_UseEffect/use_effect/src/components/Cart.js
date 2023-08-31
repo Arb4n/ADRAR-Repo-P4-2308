@@ -30,7 +30,7 @@ function Cart({ cart, updateCart }) {
 						))}
 					</ul>
 					<h3>Total :{total}€</h3>
-					<button className="montcuq-cart-add-button" onClick={() => updateCart([])}>Vider le panier</button>
+					<button className="montcuq-cart-empty-button" onClick={() => updateCart([])}>Vider le panier</button>
 				</div>
 			) : (
 				<div>Votre panier est vide</div>

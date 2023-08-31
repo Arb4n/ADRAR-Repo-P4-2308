@@ -6,3 +6,7 @@
 .montcuq-categories-select {
 	margin-right: 15px;
 }
+
+.montcuq-button-reinit {
+	cursor: pointer; 
+}
