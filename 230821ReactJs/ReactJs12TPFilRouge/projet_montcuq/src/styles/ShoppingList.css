@@ -1,19 +1,44 @@
 .montcuq-shopping-list {
 	width: 100%;
+	
+	
 }
+/* .montcuq-shopping-list::before {
+	content: "";
+	width: 100%;
+	background-image: url("../assets/img_festival_4.jpg");
+	background-size: cover;
+	position: absolute;
+	top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+	opacity: 0.5;
+	
+} */
 
 .montcuq-pass-list {
 	list-style-type: none;
 	padding: 32px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+}
+
+.montcuq-pass-list-item {
+	width: calc(50% - 16px);
+	/* Adjust as needed based on spacing and number of items per row */
+	margin-bottom: 16px;
+	/* Add space between items */
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	/* Add positioning */
 }
 
 .montcuq-button-add {
-
 	font-weight: 500;
 	cursor: crosshair;
-	display : flex ;
-	align-content : end;
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }

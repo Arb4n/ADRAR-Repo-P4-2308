@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { plantList } from '../datas/plantList'
-import PlantItem from './PlantItem'
+import { passesList } from '../datas/PassesList'
+import Passes from './Passes'
 import Categories from './Categories'
 import '../styles/ShoppingList.css'
 
 function ShoppingList({ cart, updateCart }) {
 	const [activeCategory, setActiveCategory] = useState('')
-	const categories = plantList.reduce(
+	const categories = passesList.reduce(
 		(acc, elem) =>
 			acc.includes(elem.category) ? acc : acc.concat(elem.category),
 		[]
@@ -36,14 +36,14 @@ function ShoppingList({ cart, updateCart }) {
 			/>
 
 			<ul className='montcuq-pass-list'>
-				{plantList.map(({ id, cover, name, light, water,  price, category }) =>
+				{passesList.map(({ id, cover, name, light, moon,  price, category }) =>
 					!activeCategory || activeCategory === category ? (
-						<div key={id}>
-							<PlantItem
+						<div key={id} className='montcuq-pass-list-item'>
+							<Passes
 								cover={cover}
 								name={name}
 								light={light}
-								water={water}
+								moon={moon}
 								price={price}
 							/>
 							<button className = 'montcuq-button-add' onClick={() => addToCart(name, price)}>+</button>

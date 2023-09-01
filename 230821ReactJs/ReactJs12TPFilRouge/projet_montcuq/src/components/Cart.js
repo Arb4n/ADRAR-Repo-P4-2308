@@ -42,8 +42,9 @@ function Cart({ cart, updateCart }) {
 					className='montcuq-cart-toggle-button'
 				onClick={() => setIsOpen(true)}
 			>
-					<img src="../src/assets/icon-trolley-cart-add.png"></img>Ouvrir le Panier
-			</button>
+					<img src={require('../assets/icon-trolley-cart-add.png').default} alt='' /> Votre panier
+				</button>
+				
 		</div>
 	)
 }

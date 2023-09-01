@@ -20,7 +20,7 @@
 	
 }
 .montcuq-cart-empty-button:hover{
-	color: blue; 
+	color: rgb(221, 171, 171); 
 	border : solid, white;
 	
 }
@@ -38,12 +38,16 @@
 }
 
 .montcuq-cart-closed {
+	
 	padding: 32px;
 	width: 300px;
 }
 
 .montcuq-cart-closed > button {
-	color: rgb(0, 0, 0);
+	color: rgb(255, 253, 253);
 	display: flex;
 	justify-content: end;
+	background: linear-gradient(white, cyan);
+		border-radius: 10%;
+		padding: 5px;
 }

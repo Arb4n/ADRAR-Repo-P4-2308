@@ -2,5 +2,10 @@ ReactJs >>
 >Es7+React Snippets > type rfc = gives you the basic assets you need to begin a project
 
 
-Liste des Hooks 
+Liste des Hooks >>
 https://fr.legacy.reactjs.org/docs/hooks-reference.html
+
+
+React Raccourcis >>
+https://www.freecodecamp.org/news/react-shortcuts-that-will-instantly-boost-your-productivity/
+ 

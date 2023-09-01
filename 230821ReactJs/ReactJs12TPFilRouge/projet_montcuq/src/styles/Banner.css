@@ -4,7 +4,6 @@
 			linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
 	color: black;
 	padding: 32px;
-	border-bottom: solid 3px black;
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
