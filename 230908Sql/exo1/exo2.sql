@@ -1,16 +1,5 @@
 
-/*
 
-Donner la liste des employés ayant une commission
-Donner les noms, emplois et salaires des employés par emploi croissant, et pour chaque emploi, par salaire décroissant
-Donner le salaire moyen des employés
-Donner le salaire moyen du département Production
-Donner les numéros de département et leur salaire maximum
-Donner les différentes professions et leur salaire moyen
-Donner le salaire le plus bas par profession
-Donner le ou les emplois ayant le salaire moyen le plus bas, ainsi que ce salaire moyen
-
-*/
 
 /*
 Soit le schéma relationnel suivant:
@@ -59,30 +48,46 @@ salaire_emp DECIMAL (12,2),
 comission_emp DECIMAL (12,2), 
 id_dep INT PRIMARY KEY 
 );
-/*
+
 INSERT INTO EMPLOYES (id_emp, nom_emp, prof, date_embauche_emp, salaire_emp, 
 comission_emp, id_dep)
 VALUES
 ('EMP001', 'John Doe', 'Manager', '2022-01-15', 60000.00, 5000.00, 1),
 ('EMP002', 'Jane Smith', 'Analyste', '2022-03-20', 45000.00, 2500.00, 2),
-('EMP003', 'Robert Johnson', 'Développeur', '2021-11-10', 55000.00, 3000.00, 1),
-('EMP004', 'Alice Williams', 'Comptable', '2022-05-05', 52000.00, 3500.00, 3),
-('EMP005', 'Michael Brown', 'Ingénieur', '2021-09-30', 65000.00, 4000.00, 2),
-('EMP006', 'Sarah Davis', 'Manager', '2022-02-28', 62000.00, 4800.00, 1),
-('EMP007', 'David Wilson', 'Analyste', '2022-04-15', 46000.00, 2700.00, 3),
-('EMP008', 'Jennifer Lee', 'Développeur', '2021-12-05', 54000.00, 3200.00, 2),
-('EMP009', 'Christopher Miller', 'Comptable', '2022-06-10', 53000.00, 3600.00, 1),
-('EMP010', 'Mary White', 'Ingénieur', '2021-10-20', 67000.00, 4200.00, 3),
-('EMP011', 'James Jones', 'Manager', '2022-03-01', 61000.00, 4900.00, 2),
-('EMP012', 'Linda Hall', 'Analyste', '2022-05-25', 47000.00, 2600.00, 1),
-('EMP013', 'William Brown', 'Développeur', '2021-11-15', 56000.00, 3100.00, 3),
-('EMP014', 'Patricia Davis', 'Comptable', '2022-07-05', 54000.00, 3700.00, 2),
-('EMP015', 'Richard Martinez', 'Ingénieur', '2021-08-10', 69000.00, 4300.00, 1),
-('EMP016', 'Karen Taylor', 'Manager', '2022-02-15', 63000.00, 4600.00, 3),
-('EMP017', 'Edward Clark', 'Analyste', '2022-04-30', 48000.00, 2800.00, 2),
-('EMP018', 'Susan Garcia', 'Développeur', '2021-12-20', 55000.00, 3300.00, 1),
-('EMP019', 'Michael Johnson', 'Comptable', '2022-08-15', 55000.00, 3800.00, 2),
-('EMP020', 'Laura Moore', 'Ingénieur', '2021-10-05', 71000.00, 4400.00, 3);*/
+('EMP003', 'Robert Johnson', 'Développeur', '2021-11-10', 55000.00, 3000.00, 3),
+('EMP004', 'Alice Williams', 'Comptable', '2022-05-05', 52000.00, 3500.00, 4),
+('EMP005', 'Michael Brown', 'Ingénieur', '2021-09-30', 65000.00, 4000.00, 5),
+('EMP006', 'Sarah Davis', 'Manager', '2022-02-28', 62000.00, 4800.00, 6),
+('EMP007', 'David Wilson', 'Analyste', '2022-04-15', 46000.00, 2700.00, 7),
+('EMP008', 'Jennifer Lee', 'Développeur', '2021-12-05', 54000.00, 3200.00, 8),
+('EMP009', 'Christopher Miller', 'Comptable', '2022-06-10', 53000.00, 3600.00, 9),
+('EMP010', 'Mary White', 'Ingénieur', '2021-10-20', 67000.00, 4200.00, 10),
+('EMP011', 'James Jones', 'Manager', '2022-03-01', 61000.00, 4900.00, 11),
+('EMP012', 'Linda Hall', 'Analyste', '2022-05-25', 47000.00, 2600.00, 12),
+('EMP013', 'William Brown', 'Développeur', '2021-11-15', 56000.00, 3100.00, 13),
+('EMP014', 'Patricia Davis', 'Comptable', '2022-07-05', 54000.00, 3700.00, 14),
+('EMP015', 'Richard Martinez', 'Ingénieur', '2021-08-10', 69000.00, 4300.00, 15),
+('EMP016', 'Karen Taylor', 'Manager', '2022-02-15', 63000.00, 4600.00, 16),
+('EMP017', 'Edward Clark', 'Analyste', '2022-04-30', 48000.00, 2800.00, 17),
+('EMP018', 'Susan Garcia', 'Développeur', '2021-12-20', 55000.00, 3300.00, 18),
+('EMP019', 'Michael Johnson', 'Comptable', '2022-08-15', 55000.00, 3800.00, 19),
+('EMP020', 'Laura Moore', 'Ingénieur', '2021-10-05', 71000.00, 4400.00, 20);
+
+/*
+Donner la liste des employés ayant une commission*/
+/*
+
+
+Donner les noms, emplois et salaires des employés par emploi croissant, et pour chaque emploi, par salaire décroissant
+Donner le salaire moyen des employés
+Donner le salaire moyen du département Production
+Donner les numéros de département et leur salaire maximum
+Donner les différentes professions et leur salaire moyen
+Donner le salaire le plus bas par profession
+Donner le ou les emplois ayant le salaire moyen le plus bas, ainsi que ce salaire moyen
+*/
+
+
 
 SELECT * FROM DEPARTEMENTS, EMPLOYES;
 
