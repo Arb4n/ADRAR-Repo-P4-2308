@@ -45,12 +45,12 @@ nom_emp VARCHAR (50),
 prof VARCHAR (50),
 date_embauche_emp DATE,
 salaire_emp DECIMAL (12,2),
-comission_emp DECIMAL (12,2), 
+commission_emp DECIMAL (12,2), 
 id_dep INT PRIMARY KEY 
 );
 
 INSERT INTO EMPLOYES (id_emp, nom_emp, prof, date_embauche_emp, salaire_emp, 
-comission_emp, id_dep)
+commission_emp, id_dep)
 VALUES
 ('EMP001', 'John Doe', 'Manager', '2022-01-15', 60000.00, 5000.00, 1),
 ('EMP002', 'Jane Smith', 'Analyste', '2022-03-20', 45000.00, 2500.00, 2),
@@ -75,11 +75,20 @@ VALUES
 
 /*
 Donner la liste des employés ayant une commission*/
+SELECT id_emp, nom_emp, commission_emp
+FROM EMPLOYES
+WHERE commission_emp IS NOT NULL;
+
 /*
-
-
 Donner les noms, emplois et salaires des employés par emploi croissant, et pour chaque emploi, par salaire décroissant
-Donner le salaire moyen des employés
+*/
+SELECT nom_emp, prof, salaire_emp
+FROM EMPLOYES;
+
+
+
+
+/*Donner le salaire moyen des employés
 Donner le salaire moyen du département Production
 Donner les numéros de département et leur salaire maximum
 Donner les différentes professions et leur salaire moyen
@@ -89,7 +98,7 @@ Donner le ou les emplois ayant le salaire moyen le plus bas, ainsi que ce salair
 
 
 
-SELECT * FROM DEPARTEMENTS, EMPLOYES;
+#SELECT * FROM DEPARTEMENTS, EMPLOYES;
 
 #SHOW DATABASES;
 /*
