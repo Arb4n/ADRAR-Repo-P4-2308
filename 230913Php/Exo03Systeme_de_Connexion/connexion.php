@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Connexion </title>
-    </head>
-
-    <?php
+ <?php
         include('./connect.php');
 
 
@@ -17,8 +8,30 @@ if(!empty($_POST["form_inscription"])) {
     $select->bindParam(":user_email", $_POST["form_email"]);
     $select->bindParam(":user_password", $_POST["form_password"]);
     $select->execute();
-    
+
+    if ($select->rowCount() === 1) {
+        $_SESSION['user'] = $select->fetch(PDO::FETCH_ASSOC);
+
+        header("Location: index.php");
+    } else { 
+        unset($_SESSION['user']);
+    }
+}
     ?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Connexion </title>
+    </head>
+
+   
 
         <body>
             <h1> connexion.PHP</h1>

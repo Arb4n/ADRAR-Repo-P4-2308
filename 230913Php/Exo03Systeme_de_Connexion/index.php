@@ -1,3 +1,14 @@
+<?php
+    include('./connect.php');
+
+    if(empty($_SESSION["user"])) {
+        session_destroy();
+        header("Location: connexion.php");
+    }
+    
+    ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -7,6 +18,7 @@
         <title>Index</index>
     </head>
 
+    
 
     <body>
         <h1>index.PHP</h1>

@@ -13,7 +13,14 @@ if(!empty($_POST["form_inscription"])) {
         $insert = $db->prepare("$INSERT INTO users(user_email, user_password)
                                 VALUES(:user_mail, :user_password);");
         $insert->bindParam(":user_mail", $_POST['form_email']);
-        $insert->bindParam(":user_password", $_POST['form_password']);
+
+        // Pour hacher le mdp : Remplacer le bindParam du mot de passe 
+        // $insert->bindParam(":user_password", $_POST['form_password']);
+        // par: 
+
+        $user_password = password_hash($_POST['form_password'], PASSWORD_BCRYPT, array("cost" => 12));
+        $insert->bindParam(":user_password", $user_password);
+
         if($insert->execute()) {
             die('<p style="color: green;">Inscription réussie.</p><a hred="connexion.php">Se Connecter.</a>');
         }
