@@ -1,0 +1,11 @@
+
+
+...
+
+Implementation dans le code>>
+
+
+informations env/recep>>
+from = ? 
+addaddres → répéter autant de fois qu'il y a d'emails
+

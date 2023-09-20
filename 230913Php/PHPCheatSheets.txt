@@ -1,0 +1,3 @@
+launch app php>> 
+on wampserver : folders/files in folder c/wamp/www
+with php server : php -S 127.0.0.1:8080 ; on web browser>> localhost:8080/file_name
