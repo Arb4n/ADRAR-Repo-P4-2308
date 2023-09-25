@@ -1,3 +1,8 @@
+!!!!>>> Il va te manquer systématiquement des bundles ; 
+à chaque fois, la console t'indiquera quel bundle téléchargera 
+avec l'instruction symfony require '###' 
+ 
+ 
  >>>>>>>>
  symfony console doctrine:database:create >> not working 
  Solution>> composer require symfony/orm-pack      
