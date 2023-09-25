@@ -1,0 +1,69 @@
+Vous avez été retenu pour réaliser un nouveau projet.
+Il consiste en la réalisation d’une plateforme en ligne pour réaliser des formations entièrement à distance si on le désire.
+Le travail avec le client a déjà été effectué en partie, la base de données a déjà été pensée pour vous aider, mais libre à vous de tenter en premier lieu de votre côté. 
+A l’heure actuelle, vous ne pourrez, bien entendu, pas encore tout faire. 
+Nous reviendrons sur ce même projet afin de l’améliorer et de pouvoir mieux gérer sa structure.
+Cahier des charges:
+Une page de connexion
+un écran scindé en deux parties avec:
+à gauche:
+un input texte pour l’email
+un input password pour le mot de passe
+un input submit de connexion
+un bouton de connexion via Google qui sera fonctionnel plus tard (API)
+à droite:
+un avis sélectionné aléatoirement (BDD)
+Une page d’accueil
+une navbar avec:
+l’icône du client 
+un lien vers l’accueil 
+un lien vers les formations 
+un lien vers une interface d’administration 
+une loupe qui fait apparaître un champs de recherche lorsque l’on clique dessus puis lors de la recherche, afficher une liste d’éléments correspondants à notre recherche (BDD/JS avancé)
+un bouton de connexion/le nom prénom de l’utilisateur connecté + un icône utilisateur si connecté (BDD)
+deux blocs de présentations statiques
+un carrousel d’avis d’anciens stagiaires avec photo (BDD)
+un footer et un bouton pour retourner en haut de la page (JS)
+Une page formations
+la même navbar que sur l’accueil
+un filtre pour les langages (BDD)
+diverses cartes représentant les cours disponibles (image de présentation/titre/niveau/temps estimé/synopsis)
+le même footer que sur l’accueil
+Une page de cours
+la même navbar que sur l’accueil
+reprenant le titre/niveau/temps estimé
+une date de mise à jour/publication
+un bouton de téléchargement en PDF (PHP avancé)
+un déroulé de cours pour savoir où l’on se situe, avec un code couleur pour les chapitres déjà faits suivant leur validation (vert/rouge) (BDD)
+le contenu du chapitre actuel (BDD)
+un bouton pour valider le chapitre actuel
+deux boutons à la fin pour retourner au cours précédent/aller au cours suivant 
+le même footer que sur l’accueil 
+Une page d’administration (cette page peut-être différente du reste du site, je vous laisse vous inspirer de modèles sur internet, voire d’en créer un par vous-même) ou des CRUD seront mis en oeuvre
+formulaire d'ajout/édition/suppression de cours (avec gestion des chapitres) (BDD)
+formulaire d'ajout/édition/suppression d’utilisateurs (BDD)
+
+
+Le lien vers l’intégration est disponible en cliquant ici ou en vous rendant dans le channel PHP de votre discord, sur le fil “TP ADRAR Classrooms”.
+Partie SQL:
+Pour la base de données, retrouvez le fichier .sql à importer dans votre PHPMyAdmin en cliquant ici ou dans le même fil, sur votre discord (sauf si vous désirez vous creuser les méninges pour penser à ce dont vous allez avoir besoin). 
+Nous utiliserons comme nomenclature SQL du français en snake_case (chaque mot en minuscule et séparés par des underscores _) et SANS accent.
+Le nom de nos tables sera en minuscules et au pluriel.
+Le nom de nos colonnes reprendra le nom de notre table au singulier suivi par le “vrai nom” de la colonne (Ex pour la table utilisateurs: utilisateur_id, utilisateur_nom, utilisateur_prenom, …) exception faite pour les clés étrangères afin de les distinguer plus facilement (Ex pour la table utilisateurs possédant une clé étrangère vers la table roles: …, id_role).
+
+Comment importer des données à partir d’un fichier .sql ?
+Créez une base de données vierge de tout contenu
+Une fois cela fait, cliquez sur celle-ci, et sélectionnez “Importer” dans la barre des actions:
+
+Une fois dans l’écran d’importation, sélectionnez votre fichier .sql fourni plus tôt:
+
+Puis sélectionnez “Importer” en bas de page, vous devriez alors voir votre base de données se remplir de vos tables 
+
+
+Comment récupérer les assets sur Figma ?
+Sélectionnez la ressource désirée dans le menu de gauche
+
+Ensuite, cliquez sur “Export” dans le menu de droite
+Suivant votre utilisation, changez de PNG à SVG (ça vous permettra de changer la couleur des icônes en SVG)
+Puis cliquez sur le bouton Export mon-element
+NB: Si vous sélectionnez plusieurs éléments dans le menu de gauche et que vous cherchez à les exporter, une archive de tous vos éléments sera créée.

@@ -1,0 +1,175 @@
+ >>>>>>>>
+ symfony console doctrine:database:create >> not working 
+ Solution>> composer require symfony/orm-pack      
+ !!>> chose yes to the question : install docker gnagna
+
+
+ Precisely>> 
+ PS C:\wamp64\www\tp_adrar-classroom\adrar_classrooms> symfony console doctrine:database:create
+[critical] Error thrown while running command ""doctrine:database:create"". Message: "There are no commands defined in the "doctrine:database" namespace.
+
+ymfony/orm-pack"."
+
+                                                                                                                                 
+  There are no commands defined in the "doctrine:database" namespace.                                                            
+                                                                                                                                 
+  You may be looking for a command provided by the "Doctrine ORM" which is currently not installed. Try running "composer requ   
+  ire symfony/orm-pack".                                                                                                         
+
+
+
+PS C:\wamp64\www\tp_adrar-classroom\adrar_classrooms> composer require symfony/orm-pack       
+Info from https://repo.packagist.org: #StandWithUkraine
+./composer.json has been updated
+Running composer update symfony/orm-pack
+Loading composer repositories with package information
+Restricting packages listed in "symfony/symfony" to "6.3.*"
+Updating dependencies
+Lock file operations: 17 installs, 0 updates, 0 removals
+  - Locking doctrine/cache (2.2.0)
+  - Locking doctrine/collections (2.1.3)
+  - Locking doctrine/common (3.4.3)
+  - Locking doctrine/dbal (3.6.7)
+  - Locking doctrine/deprecations (v1.1.1)
+  - Locking doctrine/doctrine-bundle (2.10.2)
+  - Locking doctrine/doctrine-migrations-bundle (3.2.4)
+  - Locking doctrine/event-manager (2.0.0)
+  - Locking doctrine/instantiator (2.0.0)
+  - Locking doctrine/lexer (2.1.0)
+  - Locking doctrine/migrations (3.6.0)
+  - Locking doctrine/orm (2.16.2)
+  - Locking doctrine/persistence (3.2.0)
+  - Locking doctrine/sql-formatter (1.1.3)
+  - Locking symfony/doctrine-bridge (v6.3.4)
+  - Locking symfony/orm-pack (v2.4.0)
+  - Locking symfony/stopwatch (v6.3.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 17 installs, 0 updates, 0 removals
+  - Downloading doctrine/cache (2.2.0)
+  - Downloading doctrine/deprecations (v1.1.1)
+  - Downloading doctrine/collections (2.1.3)
+  - Downloading doctrine/event-manager (2.0.0)
+  - Downloading doctrine/persistence (3.2.0)
+  - Downloading doctrine/common (3.4.3)
+  - Downloading doctrine/instantiator (2.0.0)
+  - Downloading doctrine/lexer (2.1.0)
+  - Downloading symfony/stopwatch (v6.3.0)
+  - Downloading doctrine/dbal (3.6.7)
+  - Downloading doctrine/migrations (3.6.0)
+  - Downloading doctrine/sql-formatter (1.1.3)
+  - Downloading symfony/doctrine-bridge (v6.3.4)
+  - Downloading doctrine/orm (2.16.2)
+  - Downloading doctrine/doctrine-bundle (2.10.2)
+  - Downloading doctrine/doctrine-migrations-bundle (3.2.4)
+  - Downloading symfony/orm-pack (v2.4.0)
+  - Installing doctrine/cache (2.2.0): Extracting archive
+  - Installing doctrine/deprecations (v1.1.1): Extracting archive
+  - Installing doctrine/collections (2.1.3): Extracting archive
+  - Installing doctrine/event-manager (2.0.0): Extracting archive
+  - Installing doctrine/persistence (3.2.0): Extracting archive
+  - Installing doctrine/common (3.4.3): Extracting archive
+  - Installing doctrine/instantiator (2.0.0): Extracting archive
+  - Installing doctrine/lexer (2.1.0): Extracting archive
+  - Installing symfony/stopwatch (v6.3.0): Extracting archive
+  - Installing doctrine/dbal (3.6.7): Extracting archive
+  - Installing doctrine/migrations (3.6.0): Extracting archive
+  - Installing doctrine/sql-formatter (1.1.3): Extracting archive
+  - Installing symfony/doctrine-bridge (v6.3.4): Extracting archive
+  - Installing doctrine/orm (2.16.2): Extracting archive
+  - Installing doctrine/doctrine-bundle (2.10.2): Extracting archive
+  - Installing doctrine/doctrine-migrations-bundle (3.2.4): Extracting archive
+  - Installing symfony/orm-pack (v2.4.0): Extracting archive
+Generating autoload files
+48 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Symfony operations: 2 recipes (459a49b426f236c612b2f80c4cd28033)
+  - Configuring doctrine/doctrine-bundle (>=2.10): From github.com/symfony/recipes:main
+  -  WARNING  doctrine/doctrine-bundle (>=2.10): From github.com/symfony/recipes:main
+    The recipe for this package contains some Docker configuration.
+
+    This may create/update docker-compose.yml or update Dockerfile (if it exists).
+
+    Do you want to include Docker configuration from recipes?
+    [y] Yes
+    [n] No
+    [p] Yes permanently, never ask again for this project
+    [x] No permanently, never ask again for this project
+    (defaults to y): y
+  - Configuring doctrine/doctrine-migrations-bundle (>=3.1): From github.com/symfony/recipes:main
+Unpacking Symfony packs
+  - Unpacked symfony/orm-pack
+Loading composer repositories with package information
+Updating dependencies
+Nothing to modify in lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 0 installs, 0 updates, 1 removal
+  - Removing symfony/orm-pack (v2.4.0)
+Generating autoload files
+47 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+
+No security vulnerability advisories found.
+
+ What's next? 
+
+
+Some files have been created and/or updated to configure your new packages.
+Please review, edit and commit them: these files are yours.
+
+ doctrine/doctrine-bundle  instructions:
+
+  * Modify your DATABASE_URL config in .env
+
+  * Configure the driver (postgresql) and
+    server_version (15) in config/packages/doctrine.yaml
+
+No security vulnerability advisories found.
+PS C:\wamp64\www\tp_adrar-classroom\adrar_classrooms> composer require symfony/orm-pack       
+Precisely<<
+
+<<<<<
+
+>>>
+; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
+; https://php.net/allow-url-fopen
+allow_url_fopen = On
+
+; Whether to allow include/require to open URLs (like https:// or ftp://) as files.
+; https://php.net/allow-url-include
+allow_url_include = Off
+<<<
+
+
+When>>  symfony console doctrine:database:create>>
+
+Problem : 
+##> 
+##<
+= balises : bien mettre 'DATABASE_URL="mysql://hal:0000@127.0.0.1:3306/adrar?serverVersion=8.0.31&charset=utf8mb4"'
+entre ses deux balises connard. 
+
+###> doctrine/doctrine-bundle ###
+# Format described at https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+# IMPORTANT: You MUST configure your server version, either here or in config/packages/doctrine.yaml
+#
+# DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
+# DATABASE_URL="mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=8.0.32&charset=utf8mb4"
+# DATABASE_URL="mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=10.11.2-MariaDB&charset=utf8mb4"
+#DATABASE_URL="postgresql://app:!ChangeMe!@127.0.0.1:5432/app?serverVersion=15&charset=utf8"
+DATABASE_URL="mysql://hal:0000@127.0.0.1:3306/adrar?serverVersion=8.0.31&charset=utf8mb4"
+###< doctrine/doctrine-bundle ###
+
+&&>>
+2ème problème :  An exception occurred in the driver: SQLSTATE[HY000] [1045] Accès refusé pour l'utilisateur: 'hal'@'@localhost' (mot de passe: OUI)
+>> aller dans Serveur sur 'php my admin' et 'version du serveur', ici 8.0.31, et noter dans DATABASEetc.
+
+<<<<
+
+
