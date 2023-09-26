@@ -1,0 +1,50 @@
+!!!>> use Trello
+
+
+1>> symfony check:requirements
+
+ * intl extension should be available
+   > Install and enable the intl extension (used for validators).
+
+>> composer require symfony/intl
+
+
+ * a PHP accelerator should be installed
+   > Install and/or enable a PHP accelerator (highly recommended).
+
+>> is it useful to use ? 
+cf.>>https://copyprogramming.com/howto/install-and-or-enable-a-php-accelerator-highly-recommended
+
+ * realpath_cache_size should be at least 5M in php.ini
+   > Setting "realpath_cache_size" to e.g. "5242880" or "5M" in
+   > php.ini* may improve performance on Windows significantly in some
+   > cases.
+
+<<1
+
+<<<<<<<<>>>>>>>>>>>
+
+2>> Création d'une app adrar_classrooms
+symfony new --webapp adrar_classrooms
+>>
+cd adrar_classrooms 
+
+check php version>> 
+>>
+symfony local:php:list
+
+ET>> 
+soit>> créer .php-version à la racine, et y marquer la version désirée (ici 8.2.10)
+OU>> in>> tableau config, composer.json :>>
+>>
+"platform": {
+    "php": "8.2.10"
+}
+
+<<2
+
+<<<<<<<>>>>>>>>
+
+3>>
+CREATION DU CONTROLEUR>>
+symfony console make:controller <nom_du_controleur>

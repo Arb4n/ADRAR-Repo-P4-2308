@@ -1,0 +1,83 @@
+!!!>> 
+>> cd folder
+>> symfony server:start
+
+
+<<<<<<<<<<>>>>>>>>
+
+>> symfony console make:registration-form
+>>  Next: Make any changes you need to the form, controller & template.
+
+<<<<<<<<<<>>>>>>>>
+AUTHENTIFICATION >>>
+
+>> symfony console make:registration-form
+>> symfony console make:auth
+
+
+<<<<<<<<<<>>>>>>>>
+ENTITE>>>
+Création d'entité>>>
+User >> 
+>> symfony console make:user
+
+Other>> symfony console make:entity
+
+!!!>> alt+shift+s
+
+
+<<<<<<<<<<<>>>>>>>>>>
+!!!>> TRAITS>>>
+Aller à Migration >> symfony console make:migration && symfony console doctrine:migrations:migrate
+pour mettre à jour la bdd après avoir créé ses entités et traits. 
+
+
+CreatedAtTrait>>>
+<?php
+
+namespace App\entity\Trait;
+
+use Doctrine\ORM\Mapping as ORM;
+
+trait CreatedAtTrait
+
+{
+    #[ORM\Column(type: 'datetime_immutable')]
+    private $created_at;
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $created_at): self
+    
+     {
+         $this->created_at = $created_at;
+
+         return $this;
+     
+     }    
+}
+
+
+
+?>
+
+
+CreatedAtTrait<<<
+
+<<<<<<<<<>>>>>>>>>>>
+
+
+FIXTURES>>
+INstall>>
+>> composer require --dev orm-fixtures
+
+Nouve fixture>>>
+>> 
+symfony console make:fixtures TestFixtures
+LAncer fixture et données sur la table : 
+>>
+symfony console doctrine:fixtures:load
+
