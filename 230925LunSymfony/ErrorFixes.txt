@@ -178,3 +178,5 @@ DATABASE_URL="mysql://hal:0000@127.0.0.1:3306/adrar?serverVersion=8.0.31&charset
 <<<<
 
 
+!!!!>>>
+dans un tel cas, ne pas passer par phpmyadmin

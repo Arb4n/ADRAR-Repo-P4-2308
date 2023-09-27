@@ -47,15 +47,15 @@
  }
 
 
-input{
-    background-color: black;
-    border: solid, white;
-}
+ input {
+     background-color: black;
+     border: solid, white;
+ }
 
-/* .email-label{
+ /* .email-label{
     text-align: left;
 } */
-/* .password-label{
+ /* .password-label{
     text-align: left;
 
 }
@@ -72,13 +72,27 @@ form label {
      font-family: 'inter', sans-serif;
      padding: 1em;
      border-radius: 10%;
+     cursor: pointer;
+ }
+
+ .horizontal-lines {
+     display: flex;
+     align-items: center;
+ }
+
+ .line-left,
+ .line-right {
+     flex-grow: 1;
+     height: 1px;
+     background-color: #000;
+     margin: 0 10px;
  }
 
  .square-button {
      width: 50px;
      height: 50px;
      background-color: white;
- 
+
      text-align: center;
      /* Centrer le texte à l'intérieur du bouton */
      line-height: 50px;
@@ -100,8 +114,26 @@ form label {
      padding: 50px;
  }
 
+
+ .steven-container{
+    display:flex;
+    align-items: baseline;
+ }
  .steven {
-     height: 10em;
+     height: 1000em;
      width: 10em;
 
+ }
+ .bottom-image-container {
+     text-align: center;
+     /* Center the image horizontally */
+     margin-top: 20px;
+     /* Adjust the top margin as needed */
+ }
+
+ .steven {
+     display: block;
+     /* Ensures the image is centered properly */
+     margin: 0 auto;
+     /* Center the image horizontally */
  }
