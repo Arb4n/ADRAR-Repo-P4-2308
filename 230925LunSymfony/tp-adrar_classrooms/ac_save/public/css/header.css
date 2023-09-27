@@ -1,0 +1,53 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 5%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: black;
+}
+.header-logo {
+  width: 83px;
+  height: 83px;
+}
+.header-classrooms {
+  width: 214px;
+  height: 30px;
+}
+.header-links {
+  list-style: none;
+  color: gray;
+  font-size: 25px;
+  cursor: pointer;
+}
+.header-links a {
+  text-decoration: none;
+}
+
+.header-links a:visited {
+  color: white;
+}
+
+.search-icon {
+  color: white;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.sign-in-btn {
+  color: #5584ac;
+  font-size: 20px;
+  background-color: black;
+  height: 55px;
+  width: 150px;
+  border: 2px solid #5584ac;
+  border-radius: 7px;
+  cursor: pointer;
+}

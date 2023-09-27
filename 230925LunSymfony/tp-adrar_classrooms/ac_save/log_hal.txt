@@ -1,0 +1,43 @@
+1>> clone git from Laura
+2>> create and checkout branch login
+3>> symfony check:requirements
+ [ERROR]
+ Your system is not ready to run Symfony projects 
+
+
+Fix the following mandatory requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ * Vendor libraries must be installed
+   > Vendor libraries are missing. Install composer following
+   > instructions from http://getcomposer.org/. Then run "php
+   > composer.phar install" to install them.
+
+   Optional recommendations to improve your setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ * intl extension should be available
+   > Install and enable the intl extension (used for validators).
+
+ * a PHP accelerator should be installed
+
+ * realpath_cache_size should be at least 5M in php.ini
+   > Setting "realpath_cache_size" to e.g. "5242880" or "5M" in
+   > php.ini* may improve performance on Windows significantly in some
+   > cases.
+
+4>> composer require symfony/intl
+
+5>> Need to create an entity User first!!!
+>>
+    console make:user 
+>>
+    console make:registration-form 
+    !!!>> authentification verif with email : no 
+>>
+    console make:auth
+
+
+
+
+u

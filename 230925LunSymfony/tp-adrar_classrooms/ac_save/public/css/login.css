@@ -1,0 +1,107 @@
+ body {
+     margin: 0%;
+     /* padding-bottom: 0; */
+     font-family: 'inter', sans-serif;
+ }
+
+
+ .left-block,
+ .right-block {
+     text-align: center;
+ }
+
+ .adrar-title {
+     color: rgb(86, 145, 218);
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+
+ .adrar-classrooms-img {
+     height: 15px;
+ }
+
+ .container {
+     /* height: 100%; */
+     display: flex;
+     justify-content: space-between;
+     min-height: 100vh;
+ }
+
+ .left-block {
+     width: 50%;
+     /* height: 100%; */
+     background-color: black;
+     color: white;
+     padding: 50px;
+ }
+
+ .bienvenue {
+     color: white;
+     font-size: medium;
+
+ }
+
+
+ p {
+     font-family: 'Inter', sans-serif;
+
+ }
+
+
+input{
+    background-color: black;
+    border: solid, white;
+}
+
+/* .email-label{
+    text-align: left;
+} */
+/* .password-label{
+    text-align: left;
+
+}
+form label {
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+} */
+
+
+ .connexion-btn {
+     background-color: #4C85B6;
+     color: white;
+     font-family: 'inter', sans-serif;
+     padding: 1em;
+     border-radius: 10%;
+ }
+
+ .square-button {
+     width: 50px;
+     height: 50px;
+     background-color: white;
+ 
+     text-align: center;
+     /* Centrer le texte à l'intérieur du bouton */
+     line-height: 50px;
+     /* Hauteur de ligne égale à la hauteur du bouton pour centrer verticalement le texte */
+     cursor: pointer;
+     border-radius: 10%;
+ }
+
+ /* .google-btn{
+    padding:10px;
+    
+} */
+
+
+ .right-block {
+     width: 50%;
+
+     background-color: #8CC04D;
+     padding: 50px;
+ }
+
+ .steven {
+     height: 10em;
+     width: 10em;
+
+ }
