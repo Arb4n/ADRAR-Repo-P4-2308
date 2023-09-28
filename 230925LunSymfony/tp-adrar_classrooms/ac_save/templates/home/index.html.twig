@@ -1,57 +1,84 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Accueil{% endblock %}
-
+{% block title %}
+    Accueil
+{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/home.css">
 {% endblock %}
-
-{% block body %}
+{% block header %}
     {% include 'header.html.twig' %}
-
-    
+{% endblock %}
+    {% block body %}
     <main>
         <section class="candidature">
-        <h1>Votre métier de demain, à portée de main</h1>
-        <p>Développez de nouvelles compétences dans le domaine de l’informatique <br> 
-        et intégrer la formation de votre choix.</p>
-        <div class="div-btn">
-        <button class="candidature-btn">Démarrer ma candidature</button>
-        <button class="formations-btn">Découvrir les formations</button>
-        </div>
-        <img class="section1-img" src={{asset ("assets/home-section1.svg")}} alt="illustration bureau">
-        </section>
-
-        <section class="etapes">
-        <div class="section2-card">
-        <img class="card-img" src={{asset ("assets/section1-card1.svg")}} alt="">
-        <h2>Diplômes certifiants</h2>
-        <p>Nos parcours procurent des titres reconnus par l’État</p>
-        </div>
-        <div class="section2-card">
-        <img class="card-img" src={{asset ("assets/section1-card2.svg")}} alt="">
-        <h2>Mentor</h2>
-        <p>Un expert du secteur vous suit de manière régulière</p>
-        </div>
-        <div class="section2-card">
-        <img class="card-img" src={{asset ("assets/section1-card3.svg")}} alt="">
-        <h2>Remboursé si non embauché</h2>
-        <p>Un expert du secteur vous suit de manière régulière</p>
-        </div>
-        </section>
-
-        <section class="temoignages">
-        <h1>Témoignages &amp; sourires</h1>
-        <img class="portrait" src={{asset ("assets/portrait1.png")}} alt="">
-        <h2>Austin</h2>
-        <p>"Too easy"</p>
-        <div>
-        <button><img src={{asset ("assets/btn-fleche-gche.png")}} alt=""></button>
-        <button><img src={{asset ("assets/btn-fleche-dte.png")}} alt=""></button>
-        </div>
-        </section>
-    </main>
-
-    {% include 'footer.html.twig' %}
-{% endblock %}
-
+            <h1>
+                Votre métier de demain, à portée de main
+            </h1>
+            <p>
+                Développez de nouvelles compétences dans le domaine de l’informatique 
+                <br>
+                    et intégrer la formation de votre choix.
+                </p>
+                <div class="div-btn">
+                    <button class="candidature-btn">
+                        Démarrer ma candidature
+                    </button>
+                    <button class="formations-btn">
+                        Découvrir les formations
+                    </button>
+                </div>
+                <img class="section1-img" src="{{ asset ("assets/home-section1.svg")}}" alt="illustration bureau"></section>
+                <section class="etapes">
+                    <div class="section2-card">
+                        <img class="card-img" src="{{ asset ("assets/section1-card1.svg")}}" alt="">
+                            <h2>
+                                Diplômes certifiants
+                            </h2>
+                            <p>
+                                Nos parcours procurent des titres reconnus par l’État
+                            </p>
+                        </div>
+                        <div class="section2-card">
+                            <img class="card-img" src="{{ asset ("assets/section1-card2.svg")}}" alt="">
+                                <h2>
+                                    Mentor
+                                </h2>
+                                <p>
+                                    Un expert du secteur vous suit de manière régulière
+                                </p>
+                            </div>
+                            <div class="section2-card">
+                                <img class="card-img" src="{{ asset ('assets/section1-card3.svg')}}" alt="">
+                                    <h2>
+                                        Remboursé si non embauché
+                                    </h2>
+                                    <p>
+                                        Un expert du secteur vous suit de manière régulière
+                                    </p>
+                                </div>
+                            </section>
+                            <section class="temoignages">
+                                <h1>
+                                    Témoignages &amp; sourires
+                                </h1>
+                                <img class="portrait" src="{{ asset ("assets/portrait1.png")}}" alt="">
+                                    <h2>
+                                        Austin
+                                    </h2>
+                                    <p>
+                                        "Too easy"
+                                    </p>
+                                    <div>
+                                        <button>
+                                            <img src={{ asset ("assets/btn-fleche-gche.png")}} alt=""></button>
+                                            <button>
+                                                <img src={{ asset ("assets/btn-fleche-dte.png")}} alt=""></button>
+                                            </div>
+                                        </section>
+                                    </main>
+                                    {% include 'footer.html.twig' %} 
+                                {% endblock %} 
+                                 {% block footer %}
+                                 {% include 'footer.html.twig' %} 
+                                {% endblock %}
+                                    

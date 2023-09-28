@@ -4,26 +4,16 @@
      font-family: 'inter', sans-serif;
  }
 
-
- .left-block,
- .right-block {
-     text-align: center;
- }
-
- .adrar-title {
-     color: rgb(86, 145, 218);
-     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- }
-
- .adrar-classrooms-img {
-     height: 15px;
- }
-
  .container {
      /* height: 100%; */
      display: flex;
      justify-content: space-between;
      min-height: 100vh;
+ }
+
+ .left-block,
+ .right-block {
+     text-align: center;
  }
 
  .left-block {
@@ -32,12 +22,30 @@
      background-color: black;
      color: white;
      padding: 50px;
+     /* display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         align-items:center
+      */
  }
+
+ /* .adrar-title {
+     color: rgb(86, 145, 218);
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ } */
+
+ .adrar-classrooms-img {
+     height: 50px;
+     width: 70%;
+     margin: 50px;
+ }
+
 
  .bienvenue {
      color: white;
-     font-size: medium;
-
+     font-size: 40px;
+     font-weight: bold;
+     margin: 50px;
  }
 
 
@@ -46,10 +54,24 @@
 
  }
 
+ .email-block {
+     margin: 10px;
+
+ }
+
+ label {
+     margin: 10px;
+     padding: 10px;
+     border: solid, white;
+     font-size: 30px;
+ }
 
  input {
      background-color: black;
      border: solid, white;
+     color: white;
+     font-size: 30px;
+     margin: 10px;
  }
 
  /* .email-label{
@@ -70,14 +92,18 @@ form label {
      background-color: #4C85B6;
      color: white;
      font-family: 'inter', sans-serif;
-     padding: 1em;
-     border-radius: 10%;
+     font-size: 30px;
+     padding: 1%;
+     margin: 20px;
+     border-radius: 5%;
      cursor: pointer;
+     width: 50%;
  }
 
  .horizontal-lines {
      display: flex;
      align-items: center;
+     margin: 30px;
  }
 
  .line-left,
@@ -89,10 +115,10 @@ form label {
  }
 
  .square-button {
+     margin: 10px;
      width: 50px;
      height: 50px;
      background-color: white;
-
      text-align: center;
      /* Centrer le texte à l'intérieur du bouton */
      line-height: 50px;
@@ -101,39 +127,67 @@ form label {
      border-radius: 10%;
  }
 
- /* .google-btn{
-    padding:10px;
-    
-} */
+ .img-google {
+     /* padding: 10%; */
+     margin:10%;
+     width: 90%;
+     
+
+ }
+
+
+ /*________ 2EME BLOC _______ */
+
 
 
  .right-block {
      width: 50%;
-
      background-color: #8CC04D;
-     padding: 50px;
+     padding-top: 50px;
+     padding-right: 50px;
+     padding-left: 50px;
+     /* display: flex; */
+     /* flex-direction: column;
+     justify-content: space-between;
+     align-items: flex-end; */
  }
 
 
- .steven-container{
-    display:flex;
-    align-items: baseline;
- }
- .steven {
-     height: 1000em;
-     width: 10em;
+ /* Text */
 
- }
- .bottom-image-container {
-     text-align: center;
-     /* Center the image horizontally */
-     margin-top: 20px;
-     /* Adjust the top margin as needed */
+ .text-block {
+     padding-top: 10%;
+     padding-left: 10%;
+     padding-right: 10%;
+     /* margin: 10%; */
  }
 
- .steven {
+ .alex-talk {
+     font-size: 30px;
+     font-weight: bold;
+ }
+
+ .alex-sign {
+     font-size: 20px;
+ }
+
+ /* Photo */
+
+ /* .alex-container {
+     display: flex;
+     justify-content: space-evenly;
+     align-items: flex-end;
+
+ } */
+
+ .alex {
+     display: flex;
+     height: 80%;
+     width: 80%;
      display: block;
      /* Ensures the image is centered properly */
      margin: 0 auto;
      /* Center the image horizontally */
+     margin-top: 11%;
+     margin-bottom: 0%;
  }

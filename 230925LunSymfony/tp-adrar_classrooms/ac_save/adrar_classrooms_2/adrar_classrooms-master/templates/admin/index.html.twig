@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+    {% block stylesheets %}
+    <link rel="stylesheet" href="/css/admin.css">
+{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+
+    <main>
+    <h1>Administration</h1>
+
+    <h2>Gestion des cours</h2>
+    <button onclick="showCourseForm('add')">Ajouter un cours</button>
+
+    <div id="courseForm" style="display:none;">
+        <h3>Formulaire de cours</h3>
+        <input type="text" id="courseName" placeholder="Nom du cours">
+        <button onclick="saveCourse()">Enregistrer</button>
+        <button onclick="hideCourseForm()">Annuler</button>
+    </div>
+
+    <h2>Gestion des utilisateurs</h2>
+    <button onclick="showUserForm('add')">Ajouter un utilisateur</button>
+
+    <div id="userForm" style="display:none;">
+        <h3>Formulaire d'utilisateur</h3>
+        <input type="text" id="userName" placeholder="Nom de l'utilisateur">
+        <button onclick="saveUser()">Enregistrer</button>
+        <button onclick="hideUserForm()">Annuler</button>
+    </div>
+
+    <div id="courseList">
+        <!-- Liste des cours depuis la base de données -->
+    </div>
+
+    <div id="userList">
+        <!-- Liste des utilisateurs depuis la base de données -->
+    </div>
+
+    <script src="{{ asset("js/script.js") }}"></script>
+    </main>
+    {% include 'footer.html.twig' %}
+{% endblock %}

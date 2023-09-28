@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Adrar Classrooms{% endblock %}</title>
-       
+        
+        <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
         {% block stylesheets %}
         {% endblock %}
 
@@ -11,9 +13,11 @@
         {% endblock %}
     </head>
     <body>
-   
+        {% block header %}{% endblock %}
+        
         {% block body %}{% endblock %}
+        {% block footer %}{% endblock %}
 
-    
+        {% block js %}{% endblock %}
     </body>
 </html>

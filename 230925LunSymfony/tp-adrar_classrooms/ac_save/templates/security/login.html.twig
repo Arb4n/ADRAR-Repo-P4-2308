@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Log in! _M
+{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{asset ('css/login.css')}}">
+	<link rel="stylesheet" href="{{asset ('css/login.css')}}">
 {% endblock %}
 
 {# {% block body %}
@@ -36,69 +37,74 @@
 
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+	<form method="post">
+		{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+		{% if app.user %}
+			<div class="mb-3">
+				You are logged in as
+				{{ app.user.userIdentifier }},
+				<a href="{{ path('app_logout') }}">Logout</a>
+			</div>
+		{% endif %}
 
-    {# <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1> #}
-    <div class="container">
-        <div class="left-block">
-            {# <h1 class="adrar-title">ADRAR Classrooms</h1> #}
-            <img class="adrar-classrooms-img" src="{{asset ("assets/img_login/adrar-classrooms-logo-text.png")}}" alt="Image" width="200"
-                height="150">
+		{# <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1> #}
+		<div class="container">
+			<div
+				class="left-block">
+				{# <h1 class="adrar-title">ADRAR Classrooms</h1> #}
+				<img class="adrar-classrooms-img" src="{{asset ("assets/img_login/adrar-classrooms-logo-text.png")}}" alt="Image" width="200" height="150">
 
-            <p class="bienvenue">Bienvenue</p>
+				<p class="bienvenue">Bienvenue</p>
 
-            <form>
-                <label class="email-label"for="inputEmail">Email</label>
-                 <br />
-                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email"
-                    required autofocus>
-                     <br /> 
-                <label class="password-label" for="inputPassword">Password</label>
-                 <br />
-                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-                
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<form>
+					<div class="email-block">
+						<label class="email-label" for="inputEmail">Email</label>
+						<br/>
+						<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+						<br/>
+					</div>
+					<div>
+						<label class="password-label" for="inputPassword">Password</label>
+						<br/>
+						<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-                <br />
-                <br />
+						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					</div>
+					
+					<div>
+						<button class="connexion-btn" type="submit">Se Connecter</button>
+					</div>
+				</form>
+				<div class="horizontal-lines">
+					<hr class="line-left">
+					<span>ou continuer avec</span>
+					<hr class="line-right">
+				</div>
+				<!-- <a href="#">
+								                <img class="google-btn"src="assets/img/Rectangle 13.png" alt="Icône" width="50" height="50">
+								            </a> -->
+				<!-- <a href="https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-1408561612%3A1695767491359315&access_type=online&client_id=532352704633-6pkces9iboppp465idnovkcqtlsa8j7t.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.figma.com%2Ffinish_google_sso&response_type=code&scope=profile+email&service=lso&state=uGdOVHLQ6oaOn94Jjuc9vKh7IM6rkDbKMsIx1hSXBYFC&theme=glif&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAO3n1pUG_MD2Ug9rjCKxyMEIo55M98i2w7cZ5s2Pe_AX8iSceX49RftpbwSRhxRtck3uitVWw2_T_zpqfrAczLF65WktczvTJx_MUyHgTaw-yB5GbD0sa62RXoACcz00IT0F7yKKpJNb0Rl4wB0FPV7uU5WOFE-jnp5vOGDrRzduAZysHqtwctzeZkagcEapEgnCDRz-Yy63JJVCM0s-xyt216Y2esli7Qq_3tVBhVSPrgjUOLqf_BIn0FCmNZvybGfQQ8tdCcHI9MBdCAOS1_gs6Ft53Vc-hTcrQGWgVfkNSYRreoXIhRfnhIiyYJzHlkh8UA8fvK5Y1nZ245ZaXaY7n0drL8OCbBSUb2H2Ter_iMyJRbFXv-eT7JHsPKfZQh9G8IpB8PKHgLAG_7nDFuy-HKeJmjD6XI1rEfhBcRQVdwiMmpkicxdWnKxYKNFrccjvXDYfTO7wVy2SOl3rbQ4TChfig%26as%3DS-1408561612%253A1695767491359315%26client_id%3D532352704633-6pkces9iboppp465idnovkcqtlsa8j7t.apps.googleusercontent.com%26theme%3Dglif%23&app_domain=https%3A%2F%2Fwww.figma.com&rart=ANgoxcc0eGco6n5QuS8NlWkV3FO4g0MZ1u8XBy93eAPS0uFb5D_VVp3NZDLBPsBYPm9_wDcDPIKMXtn_76ItwPS4WEaiRC50rQ"><button class="square-button"><img src="assets/img/Rectangle 13.png"> </button></a> -->
+				<a href="https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-1408561612%3A1695767491359315&access_type=online&client_id=532352704633-6pkces9iboppp465idnovkcqtlsa8j7t.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.figma.com%2Ffinish_google_sso&response_type=code&scope=profile+email&service=lso&state=uGdOVHLQ6oaOn94Jjuc9vKh7IM6rkDbKMsIx1hSXBYFC&theme=glif&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAO3n1pUG_MD2Ug9rjCKxyMEIo55M98i2w7cZ5s2Pe_AX8iSceX49RftpbwSRhxRtck3uitVWw2_T_zpqfrAczLF65WktczvTJx_MUyHgTaw-yB5GbD0sa62RXoACcz00IT0F7yKKpJNb0Rl4wB0FPV7uU5WOFE-jnp5vOGDrRzduAZysHqtwctzeZkagcEapEgnCDRz-Yy63JJVCM0s-xyt216Y2esli7Qq_3tVBhVSPrgjUOLqf_BIn0FCmNZvybGfQQ8tdCcHI9MBdCAOS1_gs6Ft53Vc-hTcrQGWgVfkNSYRreoXIhRfnhIiyYJzHlkh8UA8fvK5Y1nZ245ZaXaY7n0drL8OCbBSUb2H2Ter_iMyJRbFXv-eT7JHsPKfZQh9G8IpB8PKHgLAG_7nDFuy-HKeJmjD6XI1rEfhBcRQVdwiMmpkicxdWnKxYKNFrccjvXDYfTO7wVy2SOl3rbQ4TChfig%26as%3DS-1408561612%253A1695767491359315%26client_id%3D532352704633-6pkces9iboppp465idnovkcqtlsa8j7t.apps.googleusercontent.com%26theme%3Dglif%23&app_domain=https%3A%2F%2Fwww.figma.com&rart=ANgoxcc0eGco6n5QuS8NlWkV3FO4g0MZ1u8XBy93eAPS0uFb5D_VVp3NZDLBPsBYPm9_wDcDPIKMXtn_76ItwPS4WEaiRC50rQ">
+					<button class="square-button">
+						<img class="img-google" src="{{asset ("assets/img_login/Rectangle 13.png")}}" alt="Icône" style="padding-top: 9px; width: 70%; height: 60%;">
+					</button>
+				</a>
+			</div>
 
-                <button class="connexion-btn" type="submit">Se connecter</button>
-            </form>
-<div class="horizontal-lines">
-    <hr class="line-left">
-    <span>ou continuer avec</span>
-    <hr class="line-right">
-</div>
-            <!-- <a href="#">
-                <img class="google-btn"src="assets/img/Rectangle 13.png" alt="Icône" width="50" height="50">
-            </a> -->
-            <!-- <a href="https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-1408561612%3A1695767491359315&access_type=online&client_id=532352704633-6pkces9iboppp465idnovkcqtlsa8j7t.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.figma.com%2Ffinish_google_sso&response_type=code&scope=profile+email&service=lso&state=uGdOVHLQ6oaOn94Jjuc9vKh7IM6rkDbKMsIx1hSXBYFC&theme=glif&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAO3n1pUG_MD2Ug9rjCKxyMEIo55M98i2w7cZ5s2Pe_AX8iSceX49RftpbwSRhxRtck3uitVWw2_T_zpqfrAczLF65WktczvTJx_MUyHgTaw-yB5GbD0sa62RXoACcz00IT0F7yKKpJNb0Rl4wB0FPV7uU5WOFE-jnp5vOGDrRzduAZysHqtwctzeZkagcEapEgnCDRz-Yy63JJVCM0s-xyt216Y2esli7Qq_3tVBhVSPrgjUOLqf_BIn0FCmNZvybGfQQ8tdCcHI9MBdCAOS1_gs6Ft53Vc-hTcrQGWgVfkNSYRreoXIhRfnhIiyYJzHlkh8UA8fvK5Y1nZ245ZaXaY7n0drL8OCbBSUb2H2Ter_iMyJRbFXv-eT7JHsPKfZQh9G8IpB8PKHgLAG_7nDFuy-HKeJmjD6XI1rEfhBcRQVdwiMmpkicxdWnKxYKNFrccjvXDYfTO7wVy2SOl3rbQ4TChfig%26as%3DS-1408561612%253A1695767491359315%26client_id%3D532352704633-6pkces9iboppp465idnovkcqtlsa8j7t.apps.googleusercontent.com%26theme%3Dglif%23&app_domain=https%3A%2F%2Fwww.figma.com&rart=ANgoxcc0eGco6n5QuS8NlWkV3FO4g0MZ1u8XBy93eAPS0uFb5D_VVp3NZDLBPsBYPm9_wDcDPIKMXtn_76ItwPS4WEaiRC50rQ"><button class="square-button"><img src="assets/img/Rectangle 13.png"> </button></a> -->
-            <a
-                href="https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-1408561612%3A1695767491359315&access_type=online&client_id=532352704633-6pkces9iboppp465idnovkcqtlsa8j7t.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.figma.com%2Ffinish_google_sso&response_type=code&scope=profile+email&service=lso&state=uGdOVHLQ6oaOn94Jjuc9vKh7IM6rkDbKMsIx1hSXBYFC&theme=glif&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAO3n1pUG_MD2Ug9rjCKxyMEIo55M98i2w7cZ5s2Pe_AX8iSceX49RftpbwSRhxRtck3uitVWw2_T_zpqfrAczLF65WktczvTJx_MUyHgTaw-yB5GbD0sa62RXoACcz00IT0F7yKKpJNb0Rl4wB0FPV7uU5WOFE-jnp5vOGDrRzduAZysHqtwctzeZkagcEapEgnCDRz-Yy63JJVCM0s-xyt216Y2esli7Qq_3tVBhVSPrgjUOLqf_BIn0FCmNZvybGfQQ8tdCcHI9MBdCAOS1_gs6Ft53Vc-hTcrQGWgVfkNSYRreoXIhRfnhIiyYJzHlkh8UA8fvK5Y1nZ245ZaXaY7n0drL8OCbBSUb2H2Ter_iMyJRbFXv-eT7JHsPKfZQh9G8IpB8PKHgLAG_7nDFuy-HKeJmjD6XI1rEfhBcRQVdwiMmpkicxdWnKxYKNFrccjvXDYfTO7wVy2SOl3rbQ4TChfig%26as%3DS-1408561612%253A1695767491359315%26client_id%3D532352704633-6pkces9iboppp465idnovkcqtlsa8j7t.apps.googleusercontent.com%26theme%3Dglif%23&app_domain=https%3A%2F%2Fwww.figma.com&rart=ANgoxcc0eGco6n5QuS8NlWkV3FO4g0MZ1u8XBy93eAPS0uFb5D_VVp3NZDLBPsBYPm9_wDcDPIKMXtn_76ItwPS4WEaiRC50rQ">
-                <button class="square-button">
-                    <img src="{{asset ("assets/img_login/Rectangle 13.png")}}" alt="Icône"
-                        style="padding-top: 9px; width: 70%; height: 60%;">
-                </button>
-            </a>
-        </div>
+			<div class="right-block">
+				<div class="text-block">
+					<p class="alex-talk">« J'étais musicien indépendant, mais la COVID a tout stoppé. On m’a parlé d’ADRAR Classrooms, ça m'a
+												                ouvert des
+												                opportunités professionnelles insoupçonnées. »</p>
+					<p class="alex-sign">Alexandre, développeur fullstack junior</p>
+				</div>
 
-        <div class="right-block">
-            <p>« J'étais musicien indépendant, mais la COVID a tout stoppé. On m’a parlé d’ADRAR Classrooms, ça m'a
-                ouvert des
-                opportunités professionnelles insoupçonnées. »</p>
-            <p>Alexandre, développeur fullstack junior</p>
-            <div class="steven-container"> 
-            <img class="steven" src="{{asset("assets/img_login/image-removebg-preview 1.png")}}" alt="Image" width="200" height="150">
-            </div>
-        </div>
-    </div>
-{% endblock %}
+				<div class="alex-container">
+					<img class="alex" src="{{asset("assets/img_login/image-removebg-preview 1.png")}}" alt="Image" width="200" height="150">
+				</div>
+			</div>
+		</div>
+	{% endblock %}

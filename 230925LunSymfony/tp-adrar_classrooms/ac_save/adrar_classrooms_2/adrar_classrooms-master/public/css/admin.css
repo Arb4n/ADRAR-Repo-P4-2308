@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0px;
+    background-color: #f4f4f4;
+    
+}
+main{
+    height: 100vh;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1c8129;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3700ff;
+}
+
+input {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#courseForm, #userForm {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#courseForm h3, #userForm h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#courseList, #userList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 16px;
+    color: #777;
+}
+
+.card .edit, .card .delete {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card .edit {
+    background-color: #4285f4;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.card .delete {
+    background-color: #ea4335;
+    color: #fff;
+}
+
+.card .edit:hover, .card .delete:hover {
+    background-color: #357ae8;
+    color: #fff;
+}
+
+footer {
+    margin-top: auto;
+}
