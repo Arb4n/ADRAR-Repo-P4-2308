@@ -1,3 +1,21 @@
+A SERVER IS ALREADY RUNNING>>>
+>>
+symfony server:stop
+
+IF>>> Access denied 
+Change command controller: for example, powershell didn't let me access, 
+command prompt didn't detect a server runnning, so >>>> go on git bash
+>>>> go on git bash
+>>>> go on git bash : 
+>>
+symfony server:stop 
+, and all done. 
+
+
+
+
+
+
 !!!!>>> Il va te manquer systématiquement des bundles ; 
 à chaque fois, la console t'indiquera quel bundle téléchargera 
 avec l'instruction symfony require '###' 
