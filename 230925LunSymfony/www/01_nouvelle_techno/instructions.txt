@@ -1,0 +1,125 @@
+
+>>>installer composer>>> 
+
+>>
+composer --version
+
+>>>INSTALL SYMFONY>>>
+>>
+scoop install symfony-cli
+(scoop = command package for windows)
+
+>>>CREER UN PROJET  (avec symfony): >>>
+>>
+symfony new nouveau-projet
+
+cf. cd nouveau-projet 
+→ composer.json : ce sont les outils de base de Symfony. 
+"symfony/console":"" qui gère la console, 
+le dotenv pour le fichier .env,
+le /flex pour gérer l'install de bundles, puis le framework lui-même, et le runtime pour l'exéc,
+et gestion du format yaml. 
+→ → → version minimale
+
+>>>SAVOIR QUELLE VERSION ON A >>>
+>>
+cd nouveau-projet
+>> 
+symfony console about
+
+!!!>> si Symphony 6, php 8
+
+
+>>> CREER UN PROJET >>>
+!!!>>> possible avec la commande de symfony ou composer: 
+
+>>
+symfony **** cf. en haut
+>> 
+composer create-project symfony/skeleton projet-composer
+
+
+OU>>> CREATION D'UN PROJET WEB COMPLET
+Ajouter le flag --full
+= créer tout ce qui est nécessaire pour la base pour créer un site web. 
+
+>>
+symfony new --full nouveau-projet-web
+
+!!!>>> --full is deprecated, use --webapp instead
+
+avec composer >>>
+>>
+composer create-project symfony/website-skeleton projet-composer-web  
+
+
+>>> INSTALLER VERSION ACTUELLE SUPPORTEE >>>
+symfony new --full projet-lts --version=lts
+
+>>> avec une version différente
+>>
+symfony new --full projet-4-4 --version=4.4
+
+
+>>> TESTER UN SERVEUR >>> 
+
+
+>>
+symfony server:ca:install
+
+>> 
+composer require symfony/web-server-bundle
+
+!!!>>>   
+Your requirements could not be resolved to an installable set of packages.
+    Problem 1
+    - Root composer.json requires symfony/web-server-bundle 6.3.*, found symfony/web-server-bundle[v3.3.0-BETA1, ..., 3.4.x-dev, v4.0.0-BETA1, ..., 4.4.x-dev] but it does not match the constraint.
+>>> bundle is deprecated since symfony 4.4 : use Symfony local web server OU utiliser une autre version de symfony et php 
+
+>>> Reco : utiliser >>
+>>
+symfony serve 
+(qui est la cli de symfony)
+
+
+>>> BDD >>>
+>>> site web : db diagram 
+Entités au pluriel ou au singulier : pas de règles 
+
+
+
+
+>>> CHECK VERSIONS 
+>>
+symfony -v
+>>
+composer --version 
+OR
+composer --v 
+
+
+>>> >>>
+>>
+symfony check:requirements 
+!!!>>> zones '.......w.......w' = zones warning 
+
+Options intl 
+et PDO 
+intl : tout ce qui est internationalisations 
+PDO : tout ce qui est BDD
+s
+
+>>
+composer require symfony/intl
+
+>>> check which php modules are installed >>>
+>>
+php -m
+
+>>> zend opcache conseillé aussi
+
+
+>>> GERER SON ENVIRONNEMENT >>> 
+>> .env 
+>>> sécurité : enregistrer .env en .env.local 
+
