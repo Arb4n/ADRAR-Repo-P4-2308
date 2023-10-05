@@ -1,3 +1,20 @@
+01>>>
+>>> INSTALLATION DE SYMFONY 6 >>>
+
+link>>>
+https://www.youtube.com/watch?v=kuKb3VfcTWE&list=PLBq3aRiVuwyzI0MT4LhvwqkVenz5pF_DM&index=1&t=103s
+<<<
+
+
+>>>
+link>>>
+https://symfony.com/doc/current/doctrine.html
+>>
+composer require symfony/orm-pack
+>>
+composer require --dev symfony/maker-bundle
+<<<<
+
 
 >>>installer composer>>> 
 
@@ -88,7 +105,6 @@ Entités au pluriel ou au singulier : pas de règles
 
 
 
-
 >>> CHECK VERSIONS 
 >>
 symfony -v
@@ -123,3 +139,180 @@ php -m
 >> .env 
 >>> sécurité : enregistrer .env en .env.local 
 
+<<<01
+
+
+02>>>
+link>>>
+https://www.youtube.com/watch?v=kpSYFMV4eJc&list=PLJjnH9ZjxzLQoqucT8dNk12UaXl1V3R8k
+>>> PRESENTATION ET CONFIGURATION DU PROJET >>>
+
+>>> Toujours vérifier ses versions && compatibilité >>>
+>>
+php -v 
+
+>>>Changer la version de php : >>>
+>>
+symfony local:php:list
+&& créer un fichier .php-version en root,
+et placé le num de la version
+OU 
+dans composer.json, le tabl config :
+>>
+"platform": {
+    "php": "8.2.1"
+}
+
+
+
+>>
+mysql -v 
+
+>>> Il faut également le cli de symfony >>>
+>>
+symfony -v 
+
+&&
+>>
+composer --v
+OU
+composer --version 
+
+&& 
+>>> Verifier si on a tout ce qu'il faut pour Symfony >>>
+>>
+symfony check:requirements
+>>> ....w....w = warnings 
+
+
+Options intl 
+et PDO 
+intl : tout ce qui est internationalisations 
+PDO : tout ce qui est BDD
+s
+
+>>
+composer require symfony/intl
+>>> not activated ??? 
+
+Enable intl Extension:
+Depending on your server setup, you may have different 
+PHP configuration files (e.g., php.ini).
+ /etc/php/ for Linux systems or 
+ in the PHP folder for Windows systems.
+Search for the line that begins with ;extension=intl.so (on Linux) 
+or ;extension=intl (on Windows).
+Remove the semicolon ; at the beginning of the line to uncomment it. 
+It should look like this:
+>>
+extension=intl.so  ; on Linux
+;extension=intl     ; on Windows
+Save the php.ini file and close the text editor.
+
+>>>??? TODO ???>>>
+install pecl command-line tool to use intl. 
+Once pecl is installed, run the following command to install the intl extension:
+>>
+pecl install intl
+
+Follow the prompts to complete the installation.
+
+
+>>> check which php modules are installed >>>
+>>
+php -m
+
+>>> zend opcache conseillé aussi
+>>> TODO >>>
+check install opcache
+
+>>> GERER SON ENVIRONNEMENT >>> 
+.env>>>
+>> .env 
+>>> sécurité : enregistrer .env en .env.local 
+cf>>> .env.local :
+>>
+APP_ENV=dev
+= l'app est en cours de développement, 
+il faudra passer en prod quand 
+on sera en prod 
+
+>>
+APP_SECRET= *****
+utilisé pour générer les jetons CSRF 
+pour la validation des formulaires
+-- à modifier également en entrant en prod
+
+DEF>>>
+Le jeton CSRF est une protection 
+qui requiert l'insertion d'une valeur 
+aléatoire et dynamique dans une requête.
+ Cette valeur est ensuite analysée 
+ par le serveur pour déterminer 
+ si la requête est légitime.
+
+
+>>> Pour la partie notifications ou 
+envoi de mails avec file d'attente : 
+>>
+MESSENGER_TRANSPORT_DSN=doctrine://default?auto_setup=0
+On choisit avec où est stockée la file d'attente.
+
+
+cf>>>
+>>
+# DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
+# DATABASE_URL="mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=8.0.32&charset=utf8mb4"
+# DATABASE_URL="mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=10.11.2-MariaDB&charset=utf8mb4"
+DATABASE_URL="postgresql://app:!ChangeMe!@127.0.0.1:5432/app?serverVersion=15&charset=utf8"
+
+Si on utilise mysql, commenter pstgresql,
+décommenter mysql, par exemple
+Puis modifier la ligne :
+>>
+db_user → utilisateur ; 
+e.g>> root 
+db_password → le mot de passe de sa bdd 
+Si il n'y a pas de mdp, on peut tout 
+remplacer par un simple nom d'user. 
+E.G>> ici, 
+>>
+app:!ChangeMe!
+=
+user:mdp 
+ou juste user 
+<<E.G 
+>>
+db_name 
+= nom bdd 
+OU ici  
+>>
+app? 
+= nom bdd
+
+&& 
+>>
+serverVersion= 
+= la version du serveur à indiquer
+
+&& en bas : 
+>>
+# MAILER_DSN=null://null
+→ Si on veut envoyer des mails, il faut 
+un intercepteur de emails ou un serveur distant ;
+e.g mailhog (=serveur smtp qui intercepte 
+les emails qu'on envoie depuis une app. 
+cf.>>
+https://www.youtube.com/watch?v=pwrA7Ebg7Qg
+)
+Il faudra changer le numéro du port 
+E.G>> 
+# MAILER_DSN=null://null
+    ↓   ↓   ↓   
+# MAILER_DSN=null://localhost:1025
+<<E.G 
+
+
+<<.env
+
+<<<02
